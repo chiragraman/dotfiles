@@ -1,2 +1,1 @@
-# dotfiles
-Chirag's dotfiles
+# Chirag's dotfiles
