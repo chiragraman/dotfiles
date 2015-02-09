@@ -70,7 +70,9 @@ fi
 # setup solarized colors
 # follow instructions at https://github.com/seebi/dircolors-solarized for 'ls' support
 # use dircolors.ansi-universal
-eval `dircolors ~/.dircolors` 
+if [ `uname` == Linux ]; then
+    eval `dircolors ~/.dircolors`
+fi
 
 # load the prompt
 
