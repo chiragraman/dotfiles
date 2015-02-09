@@ -103,7 +103,6 @@ else
 	hostStyle="${yellow}";
 fi;
 
-
 prompt_command() {
 
 	# Capture the exit status of the previous command
