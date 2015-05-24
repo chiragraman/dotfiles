@@ -113,8 +113,8 @@ if [ -f ~/.bash/aliases ]; then
 fi
 
 # bash completion
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
 fi
 
 # enable programmable completion features (you don't need to enable
