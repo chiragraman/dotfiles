@@ -1,0 +1,99 @@
+.tool-bar {
+    position: relative;
+    border: none;
+    z-index: 5000;
+
+    &.tool-bar-vertical {
+        width: 3rem;
+
+        .tool-bar-spacer {
+            margin: 0.5rem 0;
+        }
+    }
+    &.tool-bar-horizontal {
+        height: 3rem;
+
+        &.tool-bar-top {
+            background: @app-background-color;
+        }
+        &.tool-bar-bottom {
+            background: @app-background-color;
+
+            .tool-bar-btn {
+                color: @text-color;
+            }
+        }
+        .tool-bar-spacer {
+            margin: 0 0.5rem;
+        }
+    }
+    &.tool-bar-horizontal, &.tool-bar-vertical {
+        .tool-bar-spacer {
+            border: none;
+        }
+        .tool-bar-btn:first-child {
+            transition: -webkit-filter 250ms @md-timing-function;
+        }
+    }
+    &.tool-bar-16px, &.tool-bar-24px, &.tool-bar-32px {
+        .tool-bar-btn {
+            width: 3rem;
+            height: 3rem;
+            margin: 0;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+            background: none;
+            transition: color 250ms @md-timing-function;
+
+            .tool-bar-vertical & {
+                color: @text-color;
+
+                &:hover:not(:first-child) {
+                    color: @text-color-dark;
+                }
+            }
+            &::before {
+                font-size: 1.25rem;
+            }
+        }
+        &.tool-bar-vertical.gutter-bottom::after {
+            display: none;
+        }
+    }
+    .panel-shadows & {
+        &.tool-bar-vertical {
+            .tool-bar-btn:first-child {
+                .z-depth-1;
+            }
+        }
+    }
+    .tinted-tab-bar & {
+        &.tool-bar-vertical {
+            .tool-bar-btn:first-child {
+                background: darken(@base-color, 5%);
+                color: @accent-text-color;
+            }
+        }
+        &.tool-bar-top {
+            background: @base-color;
+
+            .tool-bar-btn {
+                color: @accent-text-color;
+            }
+        }
+    }
+    .panel-contrast & {
+        background: darken(@app-background-color, 5%);
+    }
+}
+.tinted-tab-bar .is-blurred .tool-bar {
+    &.tool-bar-vertical {
+        .tool-bar-btn:first-child {
+            -webkit-filter: grayscale(1) brightness(1.25);
+        }
+    }
+    &.tool-bar-top {
+        -webkit-filter: grayscale(1) brightness(1.25);
+    }
+}

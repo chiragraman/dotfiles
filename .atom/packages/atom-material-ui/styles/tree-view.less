@@ -1,0 +1,114 @@
+.tree-view {
+    font-size: 0.8rem;
+    padding-top: 3rem;
+    overflow: hidden;
+
+    .project-root {
+        padding: 0;
+        transform: translate3d(0,0,0);
+    }
+    .project-root > .header, .project-root > .header.selected {
+        background: @app-background-color;
+        position: absolute;
+        line-height: 3rem;
+        height: 3rem;
+        margin-top: -3rem;
+        width: 100%;
+        padding: 0 0.5rem;
+        color: @text-color;
+        transition: -webkit-filter 250ms @md-timing-function; 
+        z-index: 1000;
+
+        span, &::before {
+            line-height: 3rem;
+            text-transform: uppercase;
+            color: @text-color;
+
+            .selected & {
+                color: @text-color;
+            }
+        }
+    }
+    .name.icon {
+        &.icon-repo::before {
+            margin-right: 0.75rem;
+        }
+        &::before {
+            font-size: 1rem;
+            margin: 0 1.5rem 0 0.5rem;
+        }
+    }
+    li {
+        padding: 0 0.5rem;
+    }
+    li.directory.selected:not(.project-root) > div.header.list-item {
+        position: relative;
+
+        &::after {
+            .selected-item;
+        }
+    }
+    &:focus {
+        li.directory.selected > div.header.list-item {
+            color: @accent-text-color;
+
+            &::after {
+                background-color: @base-color;
+            }
+        }
+        li:not(.list-nested-item), li.list-nested-item > .list-item {
+            &.selected {
+                color: @accent-text-color;
+
+                &::before {
+                    background-color: @base-color;
+                }
+            }
+        }
+    }
+    &.has-collapsable-children .list-nested-item > .list-item::before {
+        z-index: 10;
+    }
+    .tinted-tab-bar &, .tinted-tab-bar.panel-contrast & {
+        .project-root > .header, .project-root > .header.selected {
+            background-color: darken(@base-color, 2%);
+            color: @accent-text-color;
+
+            span, &::before {
+                color: @accent-text-color;
+
+                .selected & {
+                    color: @accent-text-color;
+                }
+            }
+        }
+    }
+    .panel-shadows & {
+        .project-root > .header, .project-root > .header.selected {
+            .z-depth-1;
+        }
+    }
+    .panel-contrast & {
+        background-color: darken(@app-background-color, 2%);
+
+        .project-root > .header, .project-root > .header.selected {
+            background-color: darken(@app-background-color, 2.5%);
+        }
+    }
+    .compact-tree-view & {
+        li:not(.list-nested-item), li.list-nested-item > .list-item {
+            line-height: 1.75rem;
+        }
+    }
+}
+.tinted-tab-bar, .tinted-tab-bar.panel-contrast {
+    .is-blurred .tree-view {
+        .project-root > .header, .project-root > .header.selected {
+            -webkit-filter: grayscale(1) brightness(1.25);
+        }
+    }
+}
+.tree-view-scroller {
+    transform: translate3d(0, 0, 0);
+    position: relative;
+}
