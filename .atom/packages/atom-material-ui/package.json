@@ -1,7 +1,7 @@
 {
   "name": "atom-material-ui",
   "theme": "ui",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A dark UI theme for Atom that follows Google's Material Design Guidelines",
   "main": "lib/atom-material-ui",
   "keywords": [
@@ -29,10 +29,10 @@
     "url": "https://github.com/silvestreh/atom-material-ui/issues"
   },
   "homepage": "https://github.com/silvestreh/atom-material-ui#readme",
-  "_id": "atom-material-ui@1.0.3",
-  "_shasum": "4edadab4c68f52dd2a7bde2e878a09c1cd11b056",
-  "_resolved": "file:../d-1151030-7905-1pstpzl/package.tgz",
-  "_from": "../d-1151030-7905-1pstpzl/package.tgz",
+  "_id": "atom-material-ui@1.0.5",
+  "_shasum": "f59c0ae09aaa049d41bd7a33322f190c6c848315",
+  "_resolved": "file:../d-115111-10121-uwjx0w/package.tgz",
+  "_from": "../d-115111-10121-uwjx0w/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -51,7 +51,7 @@
       ".coffee": [
         "lib/atom-material-ui.coffee",
         "lib/bindings.coffee",
-        "lib/config.coffee"
+        "lib/conf.coffee"
       ],
       ".js": [
         "node_modules/perfect-scrollbar/dist/js/min/perfect-scrollbar.jquery.min.js",

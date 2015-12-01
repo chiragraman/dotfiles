@@ -27,11 +27,11 @@ module.exports =
             rippleClick(event)
 
         if treeView
-            treeView.addEventListener 'scroll', (event) ->
-                scrollPosY = treeView.scrollTop
-                scrollPosX = treeView.scrollLeft
-                projectRoot = document.querySelector('.project-root > .header')
-                projectRoot.style.transform = 'translate(' + scrollPosX + 'px,' + scrollPosY + 'px)'
+            # treeView.addEventListener 'scroll', (event) ->
+            #     scrollPosY = treeView.scrollTop
+            #     scrollPosX = treeView.scrollLeft
+            #     projectRoot = document.querySelector('.project-root > .header')
+            #     projectRoot.style.transform = 'translate(' + scrollPosX + 'px,' + scrollPosY + 'px)'
 
             treeView.addEventListener 'click', () ->
                 if (atomWorkspace.classList.contains('scrollbars-visible-always'))
@@ -54,5 +54,5 @@ module.exports =
                 , 0
 
         # Initialize project-root scroll position
-        if treeView
-            document.querySelector('.project-root > .header').style.transform = 'translateY(' + treeView.scrollTop + 'px)'
+        # if treeView
+        #     document.querySelector('.project-root > .header').style.transform = 'translateY(' + treeView.scrollTop + 'px)'

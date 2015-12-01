@@ -17,3 +17,4 @@
     fontSize: 12
   "tabs-to-spaces":
     onSave: "untabify"
+  "markdown-preview-plus": {}
