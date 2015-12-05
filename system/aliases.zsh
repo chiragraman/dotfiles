@@ -14,9 +14,15 @@ else
   alias ll="ls -l --color"
   alias la="ls -A --color"
 fi
+
 alias grep="grep --color=auto"
+alias cgrep="grep --color=always"
+alias rm="rm -i"
+alias md="mkdir"
+alias ..="cd .."
 alias duf="du -sh * | sort -hr"
 alias less="less -r"
+alias clean_build="rm -rf ../build/*""
 
 if [ -z "$(command -v pbcopy)" ]; then
   if [ -n "$(command -v xclip)" ]; then
