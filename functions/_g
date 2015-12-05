@@ -1,2 +1,4 @@
 #compdef g
 _files -W $GOPATH/src/github.com -/
+
+# See further documentation in `functions/g`.

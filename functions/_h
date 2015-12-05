@@ -1,2 +1,4 @@
 #compdef h
 _files -W $HOME -/
+
+# See further documentation in `functions/h`.

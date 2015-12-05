@@ -1,2 +1,4 @@
 #compdef d
 _files -W $ZSH -/
+
+# See further documentation in `functions/d`.
