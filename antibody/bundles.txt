@@ -1,0 +1,7 @@
+caarlos0/zsh-mkc
+mafredri/zsh-async
+caarlos0/zsh-git-sync
+caarlos0/zsh-open-pr
+zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search
