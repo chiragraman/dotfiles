@@ -22,7 +22,7 @@ alias md="mkdir"
 alias ..="cd .."
 alias duf="du -sh * | sort -hr"
 alias less="less -r"
-alias clean_build="rm -rf ../build/*""
+alias clean_build="rm -rf ../build/*"
 
 if [ -z "$(command -v pbcopy)" ]; then
   if [ -n "$(command -v xclip)" ]; then
