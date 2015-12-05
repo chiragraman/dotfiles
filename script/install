@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+#
+# Install dotfiles.
+set -eo pipefail
+
+install_pkg() {
+  if test "$(which apt-get)"; then
+    sudo apt-get install -y "$@"
+  fi
+}
+
+check_dependencies() {
+  for pkg in zsh git curl python; do
+    if test ! "$(which $pkg)"; then
+      install_pkg $pkg
+    fi
+  done
+}
+
+main() {
+  if [ -d ~/.dotfiles ]; then
+    echo "The '~/.dotfiles' folder already exists, please, backup it and run this again!"
+    exit 1
+  fi
+  check_dependencies
+  git clone --recursive --depth=50 https://github.com/caarlos0/dotfiles ~/.dotfiles
+  cd ~/.dotfiles
+  bash script/bootstrap
+  chsh -s "$(which zsh)"
+  echo "All done! Please, restart your terminal session!"
+}
+main
