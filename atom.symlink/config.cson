@@ -15,4 +15,7 @@
     tabLength: 4
   "save-session":
     dataSaveFolder: "/Users/chiragraman/.dotfiles/.atom/packages/save-session/projects"
-  minimap: {}
+  minimap:
+    plugins:
+      "highlight-selected": true
+  Zen: {}
