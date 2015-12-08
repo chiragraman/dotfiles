@@ -8,6 +8,9 @@
       "atom-material-ui"
       "atom-material-syntax"
     ]
+    disabledPackages: [
+      "markdown-preview"
+    ]
   editor:
     invisibles: {}
     softWrap: true
@@ -19,3 +22,4 @@
     plugins:
       "highlight-selected": true
   Zen: {}
+  linter: {}
