@@ -14,7 +14,7 @@
     softWrapAtPreferredLineLength: true
     tabLength: 4
   "save-session":
-    dataSaveFolder: "/Users/chiragraman/.dotfiles/.atom/packages/save-session/projects"
+    dataSaveFolder: "/Users/chiragraman/.dotfiles/atom.symlink/packages/save-session/projects"
   minimap:
     plugins:
       "highlight-selected": true
