@@ -4,7 +4,7 @@ apm install \
     editorconfig \
     atom-beautify \
     pdf-view zen markdown-preview-plus markdown-writer wordcount \
+    minimap highlight-selected \
     atom-material-ui atom-material-syntax file-icons \
-    todo-manager \
     save-session \
     linter || true
