@@ -23,3 +23,5 @@
       "highlight-selected": true
   Zen: {}
   linter: {}
+  "tool-bar":
+    position: "Left"
