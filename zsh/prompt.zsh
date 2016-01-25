@@ -89,14 +89,14 @@ git_check_arrows() {
 
 git_prompt(){
     # Check if a branch name has been set
-    ! [ -n git_branch ] && return;
+    ! [ -n "${git_branch}" ] && return;
 
     # Print the branch name
     echo "%{$fg_bold[white]%}on%{$reset_color%} %{$fg_bold[teal]%}${git_branch}%{$reset_color%}" | tr -d '\n'
 
     # Print the git status, if applicable
     [ -n "${git_status}" ] && \
-    echo "%{$fg_bold[blue]%}${git_status}%{$reset_color%}"
+    echo "%{$fg_bold[brown]%}${git_status}%{$reset_color%}"
 }
 
 ###
@@ -129,6 +129,7 @@ prompt_setup() {
 
     # Make using 256 colors easier
     if [[ "$(tput colors)" == "256" ]]; then
+        source $ZSH/zsh/spectrum.zsh
         # Change default colors
         fg[green]=$FG[064]
         fg[cyan]=$FG[037]
