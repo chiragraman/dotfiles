@@ -96,7 +96,7 @@ git_prompt(){
 
     # Print the git status, if applicable
     [ -n "${git_status}" ] && \
-    echo "%{$fg_bold[brown]%}${git_status}%{$reset_color%}"
+    echo "%{$fg_bold[orange]%}${git_status}%{$reset_color%}"
 }
 
 ###
