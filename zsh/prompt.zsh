@@ -36,7 +36,7 @@ git_info() {
 
             # Check git arrows
             git_check_arrows
-            #git_status+=git_arrows
+            git_status+=${git_arrows}
 
             # Check for stashed files.
 			if $($git rev-parse --verify refs/stash &>/dev/null); then
