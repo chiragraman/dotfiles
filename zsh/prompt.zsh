@@ -92,7 +92,7 @@ git_prompt(){
     ! [ -n git_branch ] && return;
 
     # Print the branch name
-    echo "%{$fg_bold[white]%}on%{$reset_color%} %{$fg_bold[cyan]%}${git_branch}%{$reset_color%}" | tr -d '\n'
+    echo "%{$fg_bold[white]%}on%{$reset_color%} %{$fg_bold[teal]%}${git_branch}%{$reset_color%}" | tr -d '\n'
 
     # Print the git status, if applicable
     [ -n "${git_status}" ] && \
@@ -124,12 +124,63 @@ prompt_setup() {
 
     prompt_opts=(subst percent)
 
+    # Load color variables to make it easier to color things
     autoload -U colors && colors
-    autoload -Uz add-zsh-hook
 
+    # Make using 256 colors easier
+    if [[ "$(tput colors)" == "256" ]]; then
+        # Change default colors
+        fg[green]=$FG[064]
+        fg[cyan]=$FG[037]
+        fg[blue]=$FG[033]
+        fg[teal]=$FG[041]
+        fg[red]=$FG[160]
+        fg[orange]=$FG[166]
+        fg[yellow]=$FG[136]
+        fg[magenta]=$FG[125]
+        fg[violet]=$FG[061]
+        fg[brown]=$FG[094]
+        fg[neon]=$FG[112]
+        fg[pink]=$FG[183]
+        fg[darkred]=$FG[088]
+
+        # Change the bold colors
+        fg_bold[green]=$FX[bold]$FG[064]
+        fg_bold[cyan]=$FX[bold]$FG[037]
+        fg_bold[blue]=$FX[bold]$FG[033]
+        fg_bold[teal]=$FX[bold]$FG[041]
+        fg_bold[red]=$FX[bold]$FG[160]
+        fg_bold[orange]=$FX[bold]$FG[166]
+        fg_bold[yellow]=$FX[bold]$FG[136]
+        fg_bold[magenta]=$FX[bold]$FG[125]
+        fg_bold[violet]=$FX[bold]$FG[061]
+        fg_bold[brown]=$FX[bold]$FG[094]
+        fg_bold[neon]=$FX[bold]$FG[112]
+        fg_bold[pink]=$FX[bold]$FG[183]
+        fg_bold[darkred]=$FX[bold]$FG[088]
+    else
+        fg[teal]=$fg[blue]
+        fg[orange]=$fg[yellow]
+        fg[violet]=$fg[magenta]
+        fg[brown]=$fg[orange]
+        fg[neon]=$fg[green]
+        fg[pink]=$fg[magenta]
+        fg[darkred]=$fg[red]
+
+        fg_bold[teal]=$fg_bold[blue]
+        fg_bold[orange]=$fg_bold[yellow]
+        fg_bold[violet]=$fg_bold[magenta]
+        fg_bold[brown]=$fg_bold[orange]
+        fg_bold[neon]=$fg_bold[green]
+        fg_bold[pink]=$fg_bold[magenta]
+        fg_bold[darkred]=$fg_bold[red]
+    fi
+
+    # Add the precmd hook
+    autoload -Uz add-zsh-hook
     add-zsh-hook precmd prompt_precmd
 
-    #Set symbols and colors
+    #Set symbols for the prompt
     GIT_STATUS_PREFIX="["
     GIT_STATUS_SUFFIX="]"
     GIT_STATUS_AHEAD="↑"
