@@ -1,4 +1,5 @@
 #!/bin/zsh
+# Based on Mathias' prompt: https://github.com/mathiasbynens/dotfiles/blob/master/.bash_prompt
 
 ###
 # Git functions
