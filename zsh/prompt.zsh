@@ -89,7 +89,7 @@ git_check_arrows() {
 
 git_prompt(){
     # Check if a branch name has been set
-    ! [ -n "${git_branch}" ] && return;
+    [ -z "${git_branch}" ] && return;
 
     # Print the branch name
     echo "%{$fg_bold[white]%}on%{$reset_color%} %{$fg_bold[teal]%}${git_branch}%{$reset_color%}" | tr -d '\n'
