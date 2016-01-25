@@ -95,7 +95,7 @@ git_prompt(){
 
     # Print the git status, if applicable
     [ -n "${git_status}" ] && \
-    echo "%{$fg[blue]%}${git_status}%{$reset_color%}"
+    echo "%{$fg_bold[blue]%}${git_status}%{$reset_color%}"
 }
 
 ###
@@ -131,11 +131,11 @@ prompt_setup() {
     #Set symbols and colors
     GIT_STATUS_PREFIX="["
     GIT_STATUS_SUFFIX="]"
-    GIT_STATUS_AHEAD="⬆"
-    GIT_STATUS_BEHIND="⬇"
+    GIT_STATUS_AHEAD="↑"
+    GIT_STATUS_BEHIND="↓"
     GIT_STATUS_UNTRACKED="?"
     GIT_STATUS_UNSTAGED="!"
-    GIT_STATUS_UNCOMMITED="✚"
+    GIT_STATUS_UNCOMMITED="+"
     GIT_STATUS_STASHED="$"
     PROMPT_SYMBOL="%{$fg_bold[white]%}❯%{$reset_color%}"
 
