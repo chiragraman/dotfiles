@@ -205,4 +205,4 @@ prompt_setup() {
     export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
 
-prompt_setup "%@"
+prompt_setup "$@"
