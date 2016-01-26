@@ -102,9 +102,10 @@ git_prompt(){
 ###
 # Misc. functions
 ###
-
 directory_name() {
-  echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
+    echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
+}
+
 }
 
 ###
