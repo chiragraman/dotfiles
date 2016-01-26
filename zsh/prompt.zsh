@@ -135,7 +135,7 @@ virtualenv_info() {
 # Hooks
 ###
 prompt_precmd() {
-    #get git information
+    # Get git information
     git_info
 
     # Get virtual environment information
