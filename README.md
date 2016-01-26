@@ -2,9 +2,6 @@
 
 Your dotfiles are how you configure your system. These are mine.
 
-![screenshot][scrn]
-[scrn]: https://github.com/chiragraman/dotfiles/blob/master/terminal_screenshot.png
-
 After spending hours configuring my machine to my liking, I realized that the files weren't organized in a way conducive to synchronizing them across machines. A quick gander through the interwebs for pointers led to my discovery of [Github does dotfiles](https://dotfiles.github.io/), and subsequently [Zach Holman's sweet setup](https://github.com/holman/dotfiles). This setup mimics his topical organization.
 
 Midway through the project I decided to jump ship to zsh, and discovered the [Antibody](https://github.com/getantibody/antibody) bundle manager, which this configuration now uses.  
