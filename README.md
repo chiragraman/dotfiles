@@ -12,7 +12,6 @@ Midway through the project I decided to jump ship to zsh, and discovered the [An
 
 Run the following commands:
 
-
 ```sh
 git clone https://github.com/chiragraman/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
