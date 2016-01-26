@@ -217,9 +217,9 @@ prompt_setup() {
     GIT_STATUS_UNSTAGED="!"
     GIT_STATUS_UNCOMMITED="+"
     GIT_STATUS_STASHED="$"
-    PROMPT_SYMBOL="%{$fg_bold[white]%}❯%{$reset_color%}"
     VIRTUAL_ENV_PREFIX="<"
     VIRTUAL_ENV_SUFFIX=">"
+    PROMPT_SYMBOL="❯"
 
     if (( $+commands[git] ))
     then
