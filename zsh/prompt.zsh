@@ -120,6 +120,15 @@ render_prompt_symbol() {
     echo "%{$fg_bold[white]%}$PROMPT_SYMBOL%{$reset_color%}"
 }
 
+virtualenv_info() {
+    # Reset variables
+    prompt_virtual_env=
+
+    # Return if not in a virtual environment
+    [[ -z $VIRTUAL_ENV ]] && return
+
+    # If we made it till here, set the prompt variable
+    prompt_virtual_env="$VIRTUAL_ENV_PREFIX${VIRTUAL_ENV##*/}$VIRTUAL_ENV_SUFFIX"
 }
 
 ###
@@ -128,6 +137,9 @@ render_prompt_symbol() {
 prompt_precmd() {
     #get git information
     git_info
+
+    # Get virtual environment information
+    virtualenv_info
 }
 
 ###
@@ -206,6 +218,8 @@ prompt_setup() {
     GIT_STATUS_UNCOMMITED="+"
     GIT_STATUS_STASHED="$"
     PROMPT_SYMBOL="%{$fg_bold[white]%}❯%{$reset_color%}"
+    VIRTUAL_ENV_PREFIX="<"
+    VIRTUAL_ENV_SUFFIX=">"
 
     if (( $+commands[git] ))
     then
@@ -217,7 +231,7 @@ prompt_setup() {
     #Define the prompts
     export PROMPT=$'\n$(user_info)%{$fg_bold[white]%}in $(directory_name) $(git_prompt)\n$(render_prompt_symbol) '
 
-    export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
+    export RPROMPT='%{$fg_bold[blue]%}${prompt_virtual_env}%{$reset_color%}'
 }
 
 prompt_setup "$@"
