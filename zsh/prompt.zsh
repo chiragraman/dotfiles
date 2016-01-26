@@ -107,13 +107,17 @@ directory_name() {
 }
 
 user_info() {
+    prompt_username_style=
     # Root user
     if [[ "$EUID" = "0" ]] || [[ "$USER" = 'root' ]]; then
-        echo "%{$fg_bold[red]%}%n%{$reset_color%}%{$fg_bold[white]%} at %{$reset_color%}%{$fg_bold[yellow]%}%m%{$reset_color%} "
+        prompt_username_style="%{$fg_bold[red]%}"
     # On SSH
     elif [[ -n "$SSH_CLIENT" || -n "$SSH2_CLIENT" ]]; then
-        echo "%{$fg_bold[orange]%}%n%{$reset_color%}%{$fg_bold[white]%} at %{$reset_color%}%{$fg_bold[yellow]%}%m%{$reset_color%} "
+        prompt_username_style="%{$fg_bold[orange]%}"
     fi
+
+    [ -n "$prompt_username_style" ] && \
+    echo "$prompt_username_style%n%{$reset_color%}%{$fg_bold[white]%} at %{$reset_color%}%{$fg_bold[yellow]%}%m%{$reset_color%} "
 }
 
 render_prompt_symbol() {
