@@ -106,6 +106,20 @@ directory_name() {
     echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
 }
 
+user_info() {
+    # Root user
+    if [[ "$EUID" = "0" ]] || [[ "$USER" = 'root' ]]; then
+        echo "%{$fg_bold[red]%}%n%{$reset_color%}%{$fg_bold[white]%} on %{$reset_color%}%{$fg_bold[yellow]%}%m%{$reset_color%} "
+    # On SSH
+    elif [[ -n "$SSH_CLIENT" || -n "$SSH2_CLIENT" ]]; then
+        echo "%{$fg_bold[orange]%}%n%{$reset_color%}%{$fg_bold[white]%} on %{$reset_color%}%{$fg_bold[yellow]%}%m%{$reset_color%} "
+    fi
+}
+
+render_prompt_symbol() {
+    echo "%{$fg_bold[white]%}$PROMPT_SYMBOL%{$reset_color%}"
+}
+
 }
 
 ###
@@ -201,7 +215,7 @@ prompt_setup() {
     fi
 
     #Define the prompts
-    export PROMPT=$'\n%{$fg_bold[white]%}in $(directory_name) $(git_prompt)\n$PROMPT_SYMBOL '
+    export PROMPT=$'\n$(user_info)%{$fg_bold[white]%}in $(directory_name) $(git_prompt)\n$(render_prompt_symbol) '
 
     export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
