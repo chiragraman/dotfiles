@@ -109,10 +109,10 @@ directory_name() {
 user_info() {
     # Root user
     if [[ "$EUID" = "0" ]] || [[ "$USER" = 'root' ]]; then
-        echo "%{$fg_bold[red]%}%n%{$reset_color%}%{$fg_bold[white]%} on %{$reset_color%}%{$fg_bold[yellow]%}%m%{$reset_color%} "
+        echo "%{$fg_bold[red]%}%n%{$reset_color%}%{$fg_bold[white]%} at %{$reset_color%}%{$fg_bold[yellow]%}%m%{$reset_color%} "
     # On SSH
     elif [[ -n "$SSH_CLIENT" || -n "$SSH2_CLIENT" ]]; then
-        echo "%{$fg_bold[orange]%}%n%{$reset_color%}%{$fg_bold[white]%} on %{$reset_color%}%{$fg_bold[yellow]%}%m%{$reset_color%} "
+        echo "%{$fg_bold[orange]%}%n%{$reset_color%}%{$fg_bold[white]%} at %{$reset_color%}%{$fg_bold[yellow]%}%m%{$reset_color%} "
     fi
 }
 
