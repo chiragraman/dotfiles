@@ -7,8 +7,8 @@
 
 git_info() {
     # Reset info variables
-    git_branch=
-    git_status=
+    prompt_git_branch=
+    prompt_git_status=
 
     # Check if the current directory is in a Git repository.
 	if [ $($git rev-parse --is-inside-work-tree &>/dev/null; \
@@ -22,38 +22,38 @@ git_info() {
 
 			# Check for uncommitted changes in the index.
 			if ! $($git diff --quiet --ignore-submodules --cached); then
-				git_status+=$GIT_STATUS_UNCOMMITED;
+				prompt_git_status+=$GIT_STATUS_UNCOMMITED;
 			fi;
 
 			# Check for unstaged changes.
 			if ! $($git diff-files --quiet --ignore-submodules --); then
-				git_status+=$GIT_STATUS_UNSTAGED;
+				prompt_git_status+=$GIT_STATUS_UNSTAGED;
 			fi;
 
 			# Check for untracked files.
 			if [ -n "$($git ls-files --others --exclude-standard)" ]; then
-				git_status+=$GIT_STATUS_UNTRACKED;
+				prompt_git_status+=$GIT_STATUS_UNTRACKED;
 			fi;
 
             # Check git arrows
             git_check_arrows
-            git_status+=${git_arrows}
+            prompt_git_status+=${git_arrows}
 
             # Check for stashed files.
 			if $($git rev-parse --verify refs/stash &>/dev/null); then
-				git_status+=$GIT_STATUS_STASHED;
+				prompt_git_status+=$GIT_STATUS_STASHED;
 			fi;
 
 		fi;
 
         # If the git status is set, add the prefix and suffix
-        [ -n "${git_status}" ] && \
-        git_status=" $GIT_STATUS_PREFIX${git_status}$GIT_STATUS_SUFFIX"
+        [ -n "${prompt_git_status}" ] && \
+        prompt_git_status=" $GIT_STATUS_PREFIX${prompt_git_status}$GIT_STATUS_SUFFIX"
 
         # Get the short symbolic ref.
 		# If HEAD isn’t a symbolic ref, get the short SHA for the latest commit
 		# Otherwise, just give up.
-		git_branch="$($git symbolic-ref --quiet --short HEAD 2>/dev/null || \
+		prompt_git_branch="$($git symbolic-ref --quiet --short HEAD 2>/dev/null || \
 			$git rev-parse --short HEAD 2>/dev/null || \
 			echo '(unknown)')"
 	else
@@ -89,14 +89,14 @@ git_check_arrows() {
 
 git_prompt(){
     # Check if a branch name has been set
-    [ -z "${git_branch}" ] && return;
+    [ -z "${prompt_git_branch}" ] && return
 
     # Print the branch name
-    echo "%{$fg_bold[white]%}on%{$reset_color%} %{$fg_bold[teal]%}${git_branch}%{$reset_color%}" | tr -d '\n'
+    echo "%{$fg_bold[white]%}on%{$reset_color%} %{$fg_bold[teal]%}${prompt_git_branch}%{$reset_color%}" | tr -d '\n'
 
     # Print the git status, if applicable
-    [ -n "${git_status}" ] && \
-    echo "%{$fg_bold[orange]%}${git_status}%{$reset_color%}"
+    [ -n "${prompt_git_status}" ] && \
+    echo "%{$fg_bold[neon]%}${prompt_git_status}%{$reset_color%}"
 }
 
 ###
