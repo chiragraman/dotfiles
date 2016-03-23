@@ -7,5 +7,7 @@ apm install \
     minimap highlight-selected minimap-highlight-selected \
     atom-material-ui atom-material-syntax file-icons \
     tool-bar tool-bar-main \
-    save-session \
-    linter || true
+    docblockr linter \
+    autocomplete-clang linter-clang switch-header-source \
+    swift-debugger language-swift \
+    save-session || true
