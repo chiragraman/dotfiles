@@ -9,5 +9,6 @@ apm install \
     tool-bar tool-bar-main \
     docblockr linter \
     autocomplete-clang linter-clang switch-header-source \
+    linter-jshint \
     swift-debugger language-swift \
     save-session || true
