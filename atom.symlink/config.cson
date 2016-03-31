@@ -17,6 +17,7 @@
   "exception-reporting":
     userId: "f66e1044-d904-5c31-3ec2-1cb9fec28b42"
   linter: {}
+  "linter-jshint": {}
   minimap:
     plugins:
       "highlight-selected": true
