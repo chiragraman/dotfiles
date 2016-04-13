@@ -1,5 +1,7 @@
 "*":
   Zen: {}
+  "atom-material-ui":
+    fonts: {}
   "autocomplete-plus": {}
   core:
     disabledPackages: [
