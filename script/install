@@ -1,32 +1,18 @@
 #!/usr/bin/env bash
 #
-# Install dotfiles.
-set -eo pipefail
+# Run all dotfiles installers.
 
-install_pkg() {
-  if test "$(which apt-get)"; then
-    sudo apt-get install -y "$@"
-  fi
-}
+set -e
 
-check_dependencies() {
-  for pkg in zsh git curl python; do
-    if test ! "$(which $pkg)"; then
-      install_pkg $pkg
-    fi
-  done
-}
+cd "$(dirname "$0")"/..
 
-main() {
-  if [ -d ~/.dotfiles ]; then
-    echo "The '~/.dotfiles' folder already exists, please, backup it and run this again!"
-    exit 1
-  fi
-  check_dependencies
-  git clone --recursive --depth=50 https://github.com/chiragraman/dotfiles.git ~/.dotfiles
-  cd ~/.dotfiles
-  bash script/bootstrap
-  chsh -s "$(which zsh)"
-  echo "All done! Please, restart your terminal session!"
-}
-main
+# Run Homebrew through the Brewfile
+echo "› brew bundle"
+brew bundle
+
+
+# find the installers and run them iteratively
+find . -name install.sh | grep -v "build" | while read -r installer; do
+  echo "› ${installer}..."
+  sh -c "$installer"
+done
