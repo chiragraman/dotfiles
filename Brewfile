@@ -12,7 +12,7 @@ brew 'imagemagick'
 brew 'libgit2'
 brew 'node'
 brew 'openssl'
-brew 'python
+brew 'python'
 brew 'readline'
 brew 'roundup'
 brew 'shellcheck'
