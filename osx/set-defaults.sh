@@ -37,7 +37,7 @@ defaults write com.apple.dock wvous-bl-corner -int 5
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
 # Disable transparency in the menu bar and elsewhere on Yosemite
-defaults write com.apple.universalaccess reduceTransparency -bool true
+defaults write com.apple.universalaccess reduceTransparency -bool false
 
 #
 # Finder
@@ -80,7 +80,7 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 # DOCK
 #
 # Setting the icon size of Dock items to 36 pixels for optimal size/screen-realestate
-defaults write com.apple.dock tilesize -int 36
+defaults write com.apple.dock tilesize -int 40
 
 # Speeding up Mission Control animations and grouping windows by application
 defaults write com.apple.dock expose-animation-duration -float 0.1
@@ -92,7 +92,7 @@ defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0
 
 # Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide -bool false
 
 # Don't animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
@@ -177,13 +177,14 @@ mv "$HOME/Library/Application Support/Google/Android File Transfer/Android File 
 #
 # Terminals
 #
-curl -L \
-  "https://raw.githubusercontent.com/mdo/ocean-terminal/master/terminal-ocean-dark.terminal" \
-  > "/tmp/terminal-ocean-dark.terminal"
-open "/tmp/terminal-ocean-dark.terminal"
-sleep 1
-defaults write com.apple.terminal "Default Window Settings" -string "terminal-ocean-dark"
-defaults write com.apple.terminal "Startup Window Settings" -string "terminal-ocean-dark"
+
+# curl -L \
+#   "https://raw.githubusercontent.com/mdo/ocean-terminal/master/terminal-ocean-dark.terminal" \
+#   > "/tmp/terminal-ocean-dark.terminal"
+# open "/tmp/terminal-ocean-dark.terminal"
+# sleep 1
+# defaults write com.apple.terminal "Default Window Settings" -string "terminal-ocean-dark"
+# defaults write com.apple.terminal "Startup Window Settings" -string "terminal-ocean-dark"
 
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 curl -L \
