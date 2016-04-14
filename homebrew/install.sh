@@ -20,3 +20,5 @@ then
   fi
 
 fi
+
+exit 0
