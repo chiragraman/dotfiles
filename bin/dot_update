@@ -12,10 +12,12 @@ echo "› Set OSX defaults"
 "$ZSH/osx/set-defaults.sh"
 "$ZSH/linux/set-defaults.sh"
 
+# Install homebrew
+echo "› homebrew/install.sh"
+"$ZSH/homebrew/install.sh"
 
-  echo "Running all install files..."
-  # run homebrew installer first
-  ./homebrew/install.sh
+echo "› brew update"
+brew update
 
 # Install software
 echo "› $ZSH/script/install"
