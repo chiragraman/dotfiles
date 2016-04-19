@@ -25,7 +25,7 @@ done
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit && compinit
 
-# load every completion after autocomplete loads
+# load everything except for path and completion files
 for file in ${(M)config_files:#*/completion.zsh}; do
   source "$file"
 done
