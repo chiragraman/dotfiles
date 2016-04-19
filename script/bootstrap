@@ -132,20 +132,31 @@ install_linux_dependencies () {
   if test "$(uname)" = "Linux"
   then
     info 'installing zsh'
-    sudo apt-get -qq update && sudo apt-get -qq install zsh
+    if sudo apt-get -qq update && sudo apt-get -qq install zsh 2>&1
+    then
+      success 'zsh installed'
+    else
+      fail 'error installing zsh'
+    fi
 
     info 'installing ruby'
-    sudo apt-get -qq install ruby 
+    if sudo apt-get -qq install ruby 2>&1
+    then
+      success 'ruby installed'
+    else
+      fail 'error installing ruby'
+    fi
   fi
 }
 
 install_linux_dependencies
 
-info "installing dependencies"
-if ./bin/dot_update > /tmp/dotfiles-update 2>&1 ; then
-  success "dependencies installed"
+info 'installing dependencies'
+if ./bin/dot_update > /tmp/dotfiles-update 2>&1
+then
+  success 'dependencies installed'
 else
-  fail "error installing dependencies"
+  fail 'error installing dependencies'
 fi
 
 echo ''
