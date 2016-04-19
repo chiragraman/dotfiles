@@ -8,7 +8,7 @@
 # Check for Homebrew
 if test ! "$(which brew)"
 then
-  echo "  Installing Homebrew for you."
+  echo "  Installing Homebrew for you\n"
 
   # Install the correct homebrew for each OS type
   if test "$(uname)" = "Darwin"
@@ -17,6 +17,8 @@ then
   elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
   then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
+    echo "\n  Installing Linuxbrew dependencies\n"
+    sudo apt-get -qq install build-essential
   fi
 
 fi
