@@ -4,8 +4,10 @@
   title_hide_sizetext = True
   title_transmit_bg_color = "#d30102"
 [keybindings]
-  split_horiz = <Primary><Shift>d
-  toggle_zoom = <Shift><Alt>Return
+  copy = <Primary>c
+  paste = <Primary>v
+  split_horiz = <Primary><Shift>h
+  split_vert = <Primary><Shift>v
 [layouts]
   [[default]]
     [[[child1]]]
