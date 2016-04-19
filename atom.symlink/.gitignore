@@ -6,3 +6,4 @@ dev
 .npm
 .node-gyp
 nohup.out
+blob-store
