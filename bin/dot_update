@@ -15,6 +15,7 @@ echo "› Set OSX defaults"
 # Install homebrew
 echo "› homebrew/install.sh"
 "$ZSH/homebrew/install.sh"
+"$ZSH/homebrew/path.zsh"
 
 echo "› brew update"
 brew update
