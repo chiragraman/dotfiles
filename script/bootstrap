@@ -128,6 +128,16 @@ install_dotfiles () {
 setup_gitconfig
 install_dotfiles
 
+install_zsh () {
+  if test "$(uname)" = "Linux"
+  then
+    info 'installing zsh'
+    sudo apt-get -qq update && sudo apt-get -qq install zsh
+  fi
+}
+
+install_zsh
+
 info "installing dependencies"
 if ./bin/dot_update > /tmp/dotfiles-update 2>&1 ; then
   success "dependencies installed"
