@@ -1,6 +1,5 @@
 [global_config]
   always_split_with_profile = True
-  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, Logger, LaunchpadBugURLHandler
   focus = system
   title_hide_sizetext = True
   title_transmit_bg_color = "#d30102"
