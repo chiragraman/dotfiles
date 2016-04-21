@@ -18,6 +18,12 @@
     tabLength: 4
   "exception-reporting":
     userId: "f66e1044-d904-5c31-3ec2-1cb9fec28b42"
+  "file-header":
+    autoAddingHeaderEnabled: false
+    email: "chirag.raman@gmail.com"
+    license: "Copyright (C) 2016 Multicomp Lab. All rights reserved."
+    realname: "Chirag Raman"
+    username: "chirag"
   linter:
     showErrorPanel: false
   "linter-jshint": {}
