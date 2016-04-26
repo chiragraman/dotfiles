@@ -8,6 +8,9 @@ _force_rehash() {
 # forces zsh to realize new commands
 zstyle ':completion:*' completer _oldlist _expand _force_rehash _complete _match
 
+# colored completion - use my LS_COLORS
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
 # more completers to use
 zstyle ':completion:*' _ignored _approximate
 
