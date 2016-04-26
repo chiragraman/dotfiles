@@ -5,6 +5,12 @@ export ZSH=$HOME/.dotfiles
 # your project folder that we can `p [tab]` to
 export PROJECTS=~/Projects
 
+# evaluate dircolors if it exists
+if [[ `uname` == Linux ]]; then
+  d=.dircolors
+  test -r $d && eval "$(dircolors $d)"
+fi
+
 # all of our zsh files
 typeset -U config_files
 config_files=($ZSH/**/*.zsh)
@@ -25,7 +31,7 @@ done
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit && compinit
 
-# load everything except for path and completion files
+# load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}; do
   source "$file"
 done
