@@ -20,14 +20,16 @@
 [plugins]
 [profiles]
   [[default]]
-    background_darkness = 0.7
+    enable_real_transparency = true
+    background_darkness = 0.75
     background_image = None
     background_type = transparent
     custom_command = TERM=xterm-256color zsh
     use_custom_command = True
   [[solarized-dark]]
     background_color = "#002b36"
-    background_darkness = 0.7
+    enable_real_transparency = true
+    background_darkness = 0.75
     background_image = None
     background_type = transparent
     cursor_color = "#eee8d5"
@@ -37,7 +39,8 @@
     use_custom_command = True
   [[solarized-light]]
     background_color = "#eee8d5"
-    background_darkness = 0.7
+    enable_real_transparency = true
+    background_darkness = 0.75
     background_image = None
     background_type = transparent
     cursor_color = "#002b36"
