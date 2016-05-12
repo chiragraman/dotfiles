@@ -9,7 +9,7 @@
     ]
     themes: [
       "atom-material-ui"
-      "atom-material-syntax"
+      "solarized-dark-syntax"
     ]
   editor:
     invisibles: {}
