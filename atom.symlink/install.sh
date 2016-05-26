@@ -7,7 +7,7 @@ apm install \
     atom-material-ui atom-material-syntax atom-material-syntax-dark file-icons \
     tool-bar tool-bar-main \
     docblockr linter \
-    autocomplete-clang linter-clang switch-header-source language-c \
+    autocomplete-clang linter-clang switch-header-source \
     swift-debugger language-swift \
     language-cmake \
     linter-jshint \
