@@ -4,6 +4,10 @@
     fonts: {}
   "autocomplete-plus": {}
   core:
+    customFileTypes:
+      "source.cpp": [
+        "h"
+      ]
     disabledPackages: [
       "markdown-preview"
     ]
