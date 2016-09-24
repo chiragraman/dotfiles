@@ -8,7 +8,7 @@
 export ZSH="$HOME/.dotfiles"
 
 # Set OS defaults
-echo "› Set OSX defaults"
+echo "› Set OS defaults"
 "$ZSH/osx/set-defaults.sh"
 "$ZSH/linux/set-defaults.sh"
 
