@@ -13,3 +13,4 @@ else
 fi
 
 antibody bundle < "$ZSH/antibody/bundles.txt" > ~/.bundles.txt
+antibody bundle < "$ZSH/antibody/last_bundles.txt" >> ~/.bundles.txt
