@@ -1,0 +1,6 @@
+flake8
+pep8
+pylint
+ipython
+virtualenv
+virtualenvwrapper

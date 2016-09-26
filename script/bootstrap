@@ -10,22 +10,18 @@ set -e
 echo ''
 
 info () {
-  # shellcheck disable=SC2059
   printf "\r  [ \033[00;34m..\033[0m ] $1\n"
 }
 
 user () {
-  # shellcheck disable=SC2059
   printf "\r  [ \033[0;33m?\033[0m ] $1\n"
 }
 
 success () {
-  # shellcheck disable=SC2059
   printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
 }
 
 fail () {
-  # shellcheck disable=SC2059
   printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
   echo ''
   exit
@@ -117,7 +113,6 @@ install_dotfiles () {
   info 'installing dotfiles'
 
   local overwrite_all=false backup_all=false skip_all=false
-  # shellcheck disable=SC2044
   for src in $(find -H "$DOTFILES_ROOT" -maxdepth 3 -name '*.symlink' -not -path '*.git*')
   do
     dst="$HOME/.$(basename "${src%.*}")"
