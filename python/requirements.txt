@@ -1,6 +1,7 @@
 flake8
+ipython
 pep8
 pylint
-ipython
+python-tk
 virtualenv
 virtualenvwrapper

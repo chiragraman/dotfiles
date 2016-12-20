@@ -10,6 +10,10 @@ cd "$(dirname $0)"/..
 echo "› brew bundle"
 brew bundle
 
+# Add brew zsh to /etc/shells, and set it as default shell
+sudo sh -c "echo `which zsh` >> /etc/shells"
+sudo chsh -s `which zsh`
+
 # find the installers and run them iteratively
 find . -name install.sh | while read -r installer; do
   echo "› ${installer}..."
