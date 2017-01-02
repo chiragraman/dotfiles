@@ -28,6 +28,8 @@
     license: "Copyright (C) 2016 Multicomp Lab. All rights reserved."
     realname: "Chirag Raman"
     username: "chiragraman"
+  "latex-plus":
+    texBin: "/usr/bin/latex"
   linter:
     showErrorPanel: false
   "linter-jshint": {}
@@ -37,6 +39,15 @@
       "highlight-selectedDecorationsZIndex": 0
   "save-session":
     dataSaveFolder: "/Users/chiragraman/.dotfiles/atom.symlink/packages/save-session/projects"
+  "spell-check":
+    grammars: [
+      "source.asciidoc"
+      "source.gfm"
+      "text.git-commit"
+      "text.plain"
+      "text.plain.null-grammar"
+      "text.tex.latex"
+    ]
   "tool-bar":
     position: "Left"
   welcome:
