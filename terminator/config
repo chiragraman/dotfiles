@@ -20,7 +20,6 @@
 [plugins]
 [profiles]
   [[default]]
-    enable_real_transparency = true
     background_darkness = 0.75
     background_image = None
     background_type = transparent
@@ -28,7 +27,6 @@
     use_custom_command = True
   [[solarized-dark]]
     background_color = "#002b36"
-    enable_real_transparency = true
     background_darkness = 0.75
     background_image = None
     background_type = transparent
@@ -39,7 +37,6 @@
     use_custom_command = True
   [[solarized-light]]
     background_color = "#eee8d5"
-    enable_real_transparency = true
     background_darkness = 0.75
     background_image = None
     background_type = transparent
