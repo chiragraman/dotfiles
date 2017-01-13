@@ -11,6 +11,7 @@
     disabledPackages: [
       "markdown-preview"
     ]
+    telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
       "solarized-dark-syntax"
@@ -53,3 +54,7 @@
     position: "Left"
   welcome:
     showOnStartup: false
+".editorconfig.source":
+  editor:
+    softWrap: true
+    softWrapAtPreferredLineLength: true
