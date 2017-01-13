@@ -1,14 +1,3 @@
-<!--
-@Author: Chirag Raman <chirag>
-@Date:   2016-12-22T17:05:51-05:00
-@Email:  chirag.raman@gmail.com
-@Last modified by:   chirag
-@Last modified time: 2016-12-24T22:04:30-05:00
-@License: Copyright (C) 2016 Multicomp Lab. All rights reserved.
--->
-
-
-
 [global_config]
   always_split_with_profile = True
   focus = system
@@ -31,7 +20,6 @@
 [plugins]
 [profiles]
   [[default]]
-    enable_real_transparency = true
     background_darkness = 0.75
     background_image = None
     background_type = transparent
@@ -39,7 +27,6 @@
     use_custom_command = True
   [[solarized-dark]]
     background_color = "#002b36"
-    enable_real_transparency = true
     background_darkness = 0.75
     background_image = None
     background_type = transparent
@@ -50,7 +37,6 @@
     use_custom_command = True
   [[solarized-light]]
     background_color = "#eee8d5"
-    enable_real_transparency = true
     background_darkness = 0.75
     background_image = None
     background_type = transparent
