@@ -20,7 +20,6 @@ then
     echo "\n  Installing Linuxbrew dependencies\n"
     sudo apt-get -qq install build-essential
   fi
-
 fi
 
 exit 0
