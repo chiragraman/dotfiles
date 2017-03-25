@@ -15,7 +15,7 @@
     telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
-      "solarized-light-syntax"
+      "solarized-dark-syntax"
     ]
   editor:
     invisibles: {}
