@@ -10,11 +10,12 @@
       ]
     disabledPackages: [
       "markdown-preview"
+      "language-python"
     ]
     telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
-      "solarized-dark-syntax"
+      "solarized-light-syntax"
     ]
   editor:
     invisibles: {}
@@ -29,7 +30,7 @@
     email: "chirag.raman@gmail.com"
     license: "Copyright (C) 2016 Chirag Raman. All rights reserved."
     realname: "Chirag Raman"
-    username: "chiragraman"
+    username: "chirag"
   "latex-plus":
     texBin: "/usr/bin/latex"
   linter:
