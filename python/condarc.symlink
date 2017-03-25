@@ -1,0 +1,2 @@
+# Prevent updates to the prompt since we handle this actively in prompt.zsh
+changeps1: False
