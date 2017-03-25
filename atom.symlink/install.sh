@@ -6,17 +6,15 @@
 # @License: Copyright (C) Chirag Raman. All rights reserved.
 
 apm install \
-    editorconfig \
-    atom-beautify \
-    docblockr linter file-header project-manager\
-    pdf-view zen markdown-preview-plus markdown-writer wordcount \
+    editorconfig atom-beautify \
+    docblockr linter file-header project-manager platformio-ide-terminal \
+    pdf-view zen markdown-preview-plus markdown-writer wordcount dictionary \
     autocomplete-bibtex language-latex linter-chktex latexer latex-plus \
-    dictionary
     minimap highlight-selected minimap-highlight-selected \
-    atom-material-ui atom-material-syntax atom-material-syntax-dark file-icons \
-    tool-bar tool-bar-main \
+    atom-material-ui atom-material-syntax atom-material-syntax-dark \
+    tool-bar tool-bar-main file-icons \
     autocomplete-clang linter-clang switch-header-source \
+    autocomplete-python linter-pylint magicpython \
     swift-debugger language-swift \
     language-cmake \
-    linter-jshint \
     save-session || true
