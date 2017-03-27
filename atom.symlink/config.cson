@@ -11,11 +11,13 @@
     disabledPackages: [
       "markdown-preview"
     ]
+    telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
-      "solarized-dark-syntax"
+      "solarized-light-syntax"
     ]
   editor:
+    fontSize: 15
     invisibles: {}
     softWrap: true
     softWrapAtPreferredLineLength: true
@@ -28,11 +30,10 @@
     email: "chirag.raman@gmail.com"
     license: "Copyright (C) 2016 Multicomp Lab. All rights reserved."
     realname: "Chirag Raman"
-    username: "chiragraman"
+    username: "chirag"
   "latex-plus":
     texBin: "/usr/bin/latex"
-  linter:
-    showErrorPanel: false
+  linter: {}
   "linter-jshint": {}
   minimap:
     plugins:
@@ -51,5 +52,6 @@
     ]
   "tool-bar":
     position: "Left"
+  "tree-view": {}
   welcome:
     showOnStartup: false
