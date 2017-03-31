@@ -10,6 +10,7 @@
       ]
     disabledPackages: [
       "markdown-preview"
+      "language-python"
     ]
     telemetryConsent: "limited"
     themes: [
@@ -28,7 +29,7 @@
     autoAddingHeaderEnabled: false
     autoUpdateEnabled: false
     email: "chirag.raman@gmail.com"
-    license: "Copyright (C) 2016 Multicomp Lab. All rights reserved."
+    license: "Copyright (C) 2016 Chirag Raman. All rights reserved."
     realname: "Chirag Raman"
     username: "chirag"
   "latex-plus":
@@ -55,3 +56,7 @@
   "tree-view": {}
   welcome:
     showOnStartup: false
+".editorconfig.source":
+  editor:
+    softWrap: true
+    softWrapAtPreferredLineLength: true

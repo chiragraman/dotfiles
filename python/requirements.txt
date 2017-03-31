@@ -1,7 +1,0 @@
-flake8
-ipython
-pep8
-pylint
-python-tk
-virtualenv
-virtualenvwrapper

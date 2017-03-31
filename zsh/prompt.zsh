@@ -129,10 +129,10 @@ virtualenv_info() {
     prompt_virtual_env=
 
     # Return if not in a virtual environment
-    [[ -z $VIRTUAL_ENV ]] && return
+    [[ -z $CONDA_DEFAULT_ENV ]] && return
 
     # If we made it till here, set the prompt variable
-    prompt_virtual_env="$VIRTUAL_ENV_PREFIX${VIRTUAL_ENV##*/}$VIRTUAL_ENV_SUFFIX"
+    prompt_virtual_env="$VIRTUAL_ENV_PREFIX${CONDA_DEFAULT_ENV##*/}$VIRTUAL_ENV_SUFFIX"
 }
 
 ###
