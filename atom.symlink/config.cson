@@ -10,12 +10,11 @@
       ]
     disabledPackages: [
       "markdown-preview"
-      "language-python"
     ]
     telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
-      "solarized-light-syntax"
+      "solarized-dark-syntax"
     ]
   editor:
     fontSize: 15
@@ -56,7 +55,3 @@
   "tree-view": {}
   welcome:
     showOnStartup: false
-".editorconfig.source":
-  editor:
-    softWrap: true
-    softWrapAtPreferredLineLength: true
