@@ -1,6 +1,5 @@
 # chiragraman does dotfiles
-![screenshot][scrn]
-[scrn]: https://github.com/chiragraman/dotfiles/blob/master/terminal_screenshot.png
+![screenshot](https://github.com/chiragraman/dotfiles/blob/master/terminal_screenshot.png)
 
 Your dotfiles are how you configure your system. These are mine.
 
