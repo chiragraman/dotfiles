@@ -7,7 +7,7 @@ After spending hours configuring my machine to my liking, I realized that the fi
 
 Midway through the project I decided to jump ship to zsh, and discovered the [Antibody](https://github.com/getantibody/antibody) bundle manager, which this configuration now uses.
 
-##components
+## components
 
 There's a few special files in the hierarchy.
 
@@ -29,7 +29,7 @@ There's a few special files in the hierarchy.
   be executed during the bootstrap phase.
 
 
-##install
+## install
 
 Run the following commands:
 
@@ -49,6 +49,6 @@ which sets up a few paths that'll be different on your particular machine.
 defaults, and so on. Occasionally run `dot_update` to keep your environment fresh and up-to-date. You can find
 this script in `bin/`.
 
-##thanks
+## thanks
 
 I originally started by forking [Zach Holman's repository](https://github.com/holman/dotfiles), and made updates based on [Carlos Becker's setup](https://github.com/caarlos0/dotfiles). There's a decent amount of code here that I've copied from other repositories as well, so it's pretty sweet to see people share their workflows!
