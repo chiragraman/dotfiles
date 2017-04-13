@@ -6,3 +6,7 @@ caarlos0/zsh-mkc
 caarlos0/zsh-open-pr kind:path
 mafredri/zsh-async
 zsh-users/zsh-completions
+
+# these should be last
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search
