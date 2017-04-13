@@ -1,4 +1,4 @@
 #compdef d
-_files -W $ZSH -/
+_files -W $DOTFILES -/
 
 # See further documentation in `functions/d`.

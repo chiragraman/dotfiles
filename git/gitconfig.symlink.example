@@ -7,12 +7,12 @@
     helper = GIT_CREDENTIAL_HELPER
 [alias]
     co                = checkout
-    promote           = !$ZSH/bin/git-promote
-    wtf               = !$ZSH/bin/git-wtf
-    unpushed-st       = !$ZSH/bin/git-unpushed-stat
-    nuke              = !$ZSH/bin/git-nuke
+    promote           = !$DOTFILES/bin/git-promote
+    wtf               = !$DOTFILES/bin/git-wtf
+    unpushed-st       = !$DOTFILES/bin/git-unpushed-stat
+    nuke              = !$DOTFILES/bin/git-nuke
     count             = shortlog -sn
-    lc                = !$ZSH/bin/git-add-rm-line-count
+    lc                = !$DOTFILES/bin/git-add-rm-line-count
     g                 = grep --break --heading --line-number
     gi                = grep --break --heading --line-number -i
     changed           = show --pretty=\"format:\" --name-only

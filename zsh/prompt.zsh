@@ -160,7 +160,7 @@ prompt_setup() {
 
     # Make using 256 colors easier
     if [[ "$(tput colors)" == "256" ]]; then
-        source $ZSH/zsh/spectrum.zsh
+        source $DOTFILES/zsh/spectrum.zsh
         # Change default colors
         fg[green]=$FG[064]
         fg[cyan]=$FG[037]
