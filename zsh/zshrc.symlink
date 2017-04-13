@@ -9,6 +9,8 @@ export PROJECTS=~/Projects
 if [[ `uname` == Linux ]]; then
   d=.dircolors
   test -r $d && eval "$(dircolors $d)"
+elif [ "$(uname -s)" = "Darwin" ]; then
+    eval `gdircolors -b ~/.dircolors.256dark`
 fi
 
 # all of our zsh files
