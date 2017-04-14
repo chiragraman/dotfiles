@@ -44,6 +44,3 @@ unset config_files
 # out of your main dotfiles repository (which may be public, like this
 # one), but you'll have access to them in your scripts.
 [[ -a ~/.localrc ]] && source ~/.localrc
-
-# disable any prompt settings by $VIRTUAL_ENV/bin/activate
-export VIRTUAL_ENV_DISABLE_PROMPT=yes
