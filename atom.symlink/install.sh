@@ -6,7 +6,8 @@
 # @License: Copyright (C) Chirag Raman. All rights reserved.
 
 apm install \
-    editorconfig atom-beautify atomic-emacs docblockr file-header \
+    editorconfig atom-beautify docblockr file-header highlight-column \
+    atomic-emacs  \
     imdone-atom project-manager \
     linter language-cmake platformio-ide-terminal \
     pdf-view zen markdown-preview-plus markdown-writer wordcount dictionary \
