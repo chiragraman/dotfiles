@@ -19,6 +19,7 @@
   editor:
     fontSize: 15
     invisibles: {}
+    showIndentGuide: true
     softWrap: true
     softWrapAtPreferredLineLength: true
     tabLength: 4
