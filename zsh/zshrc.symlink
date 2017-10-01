@@ -6,7 +6,7 @@ export DOTFILES=$HOME/.dotfiles
 export PROJECTS=~/Projects
 
 # evaluate dircolors if it exists
-if [[ `uname` == Linux ]]; then
+if [ "$(uname)" = "Linux" ]; then
   d=.dircolors
   test -r $d && eval "$(dircolors $d)"
 elif [ "$(uname -s)" = "Darwin" ]; then
