@@ -34,7 +34,7 @@ tap 'caskroom/fonts'
 tap 'caskroom/versions'
 
 cask 'android-file-transfer'
-cask 'atom'
+cask 'visual-studio-code'
 cask 'diffmerge'
 cask 'google-drive'
 cask 'slack'
