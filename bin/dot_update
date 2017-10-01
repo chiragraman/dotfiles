@@ -21,6 +21,9 @@ source $DOTFILES/homebrew/path.zsh
 echo "› brew update"
 brew update
 
+echo "› Grab latest dircolors"
+curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark > ~/.dircolors
+
 # Install software
 echo "› $DOTFILES/script/install"
 "$DOTFILES/script/install"
