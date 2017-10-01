@@ -1,0 +1,21 @@
+{
+    // Themes
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.iconTheme": "eq-material-theme-icons",
+    // Fonts
+    "editor.fontFamily": "'Fira Code'",
+    "editor.fontLigatures": true,
+    // Terminal
+    "terminal.integrated.shell.linux": "/usr/bin/zsh",
+    // Miscellaneous editor settings
+    "editor.rulers": [79],
+    "window.zoomLevel": 2,
+    "files.trimTrailingWhitespace": true,
+    // Whitelist numpy, torch to remove lint errors
+    "python.linting.pylintArgs": [
+        "--extension-pkg-whitelist=numpy,torch",
+        "--ignored-modules=numpy,torch",
+        "--ignored-classes=numpy,torch"
+    ],
+
+}
