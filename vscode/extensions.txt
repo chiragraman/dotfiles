@@ -6,3 +6,4 @@ hiro-sun.vscode-emacs
 
 # Languages
 donjayamanne.python
+ms-vscode.cpptools
