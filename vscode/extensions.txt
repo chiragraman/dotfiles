@@ -1,5 +1,6 @@
 # Editor
 hiro-sun.vscode-emacs
+psioniq.psi-header
 
 # Languages
 donjayamanne.python
