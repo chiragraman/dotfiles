@@ -2,10 +2,50 @@
     // Themes
     "workbench.colorTheme": "Solarized Dark",
     // Fonts
-    "editor.fontFamily": "'Fira Code'",
+    "editor.fontFamily": "SF Mono",
     "editor.fontLigatures": true,
     // Terminal
     "terminal.integrated.shell.linux": "/usr/bin/zsh",
+    // File Header
+    "psi-header.config": {
+        "forceToTop": true,
+        "blankLinesAfter": 2
+    },
+    "psi-header.changes-tracking": {
+        "isActive": true,
+        "exclude": [
+            "json"
+        ],
+        "autoHeader": "manualSave"
+    },
+    "psi-header.variables": [
+        ["author", "Chirag Raman"]
+    ],
+    "psi-header.lang-config": [
+        {
+            "language": "python",
+            "begin": "###",
+            "prefix": "# ",
+            "end": "###",
+            "blankLinesAfter": 2,
+            "beforeHeader": [
+                "#!/usr/bin/env python3",
+                "# -*- coding:utf-8 -*-"
+            ]
+        }
+    ],
+    "psi-header.templates": [
+        {
+            "language": "*",
+            "template": [
+                "File: <<filename>>",
+                "Created Date: <<filecreated('dddd, MMMM Do YYYY, h:mm:ss a')>>",
+                "Author: <<author>>",
+                "",
+                "Copyright (c) <<year>> <<author>>"
+            ]
+        }
+    ],
     // Miscellaneous editor settings
     "editor.rulers": [79],
     "window.zoomLevel": 0,
