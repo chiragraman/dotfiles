@@ -1,7 +1,6 @@
 {
     // Themes
     "workbench.colorTheme": "Solarized Dark",
-    "workbench.iconTheme": "eq-material-theme-icons",
     // Fonts
     "editor.fontFamily": "'Fira Code'",
     "editor.fontLigatures": true,
