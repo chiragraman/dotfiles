@@ -1,6 +1,3 @@
-# Themes
-Equinusocio.vsc-material-theme
-
 # Editor
 hiro-sun.vscode-emacs
 
