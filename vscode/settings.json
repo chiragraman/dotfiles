@@ -52,9 +52,10 @@
     "files.trimTrailingWhitespace": true,
     // Whitelist numpy, torch to remove lint errors
     "python.linting.pylintArgs": [
-        "--extension-pkg-whitelist=numpy,torch",
-        "--ignored-modules=numpy,torch",
-        "--ignored-classes=numpy,torch"
+        "--extension-pkg-whitelist=numpy,torch,cv2",
+        "--ignored-modules=numpy,torch,cv2",
+        "--ignored-classes=numpy,torch,cv2"
     ],
-
+    // Default C++ linting using IntelliSense
+    "C_Cpp.intelliSenseEngine": "Default"
 }
