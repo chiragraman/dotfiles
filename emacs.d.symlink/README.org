@@ -20,10 +20,14 @@ This =emacs.d/= was heavily based on [[https://github.com/anschwa/emacs.d]
 [Adam Schwartz' configuration]], which in turn was inspired by the following.
 
 - [[https://github.com/magnars/.emacs.d][Magnar Sveen's emacs.d]]
-- [[https://github.com/jhenahan/emacs.d/blob/master/emacs-init.org][Jack Henahan's init.org]]
-- [[https://github.com/seth/my-emacs-dot-d/blob/master/emacs-init.org][Seth Falcon's emacs-init-org]]
-- [[https://github.com/steckerhalter/steckemacs/blob/master/steckemacs.org][Steckerhalter's Steckemacs]]
-- [[http://endlessparentheses.com/init-org-Without-org-mode.html][Artur Malabarba's init.org Without org-mode]]
+- [[https://github.com/jhenahan/emacs.d/blob/master/emacs-init.org]
+   [Jack Henahan's init.org]]
+- [[https://github.com/seth/my-emacs-dot-d/blob/master/emacs-init.org]
+   [Seth Falcon's emacs-init-org]]
+- [[https://github.com/steckerhalter/steckemacs/blob/master/steckemacs.org]
+   [Steckerhalter's Steckemacs]]
+- [[http://endlessparentheses.com/init-org-Without-org-mode.html]
+   [Artur Malabarba's init.org Without org-mode]]
 
 * Prerequisites
 ** Mac OS X
@@ -70,7 +74,6 @@ brew cask install emacs-mac
 ** Ubuntu
 Emacs is available through the package manager; the version might not be the
 most up-to-date, however.
-*** 24.5
 #+BEGIN_SRC sh
 sudo apt install emacs
 #+END_SRC
@@ -85,34 +88,44 @@ emacs -q -l ~/my-init-file.el
 ** Package Sources
 #+BEGIN_SRC emacs-lisp
   (require 'package)
-  (add-to-list 'package-archives
-                 '("melpa" . "http://melpa.org/packages/") t)
-  (add-to-list 'package-archives
-               '("org" . "http://orgmode.org/elpa/") t)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+  (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
   ;; Don't need to check every time.
   ;; (when (not package-archive-contents)
   ;;   (package-refresh-contents))
   (package-initialize)
 #+END_SRC
+
 ** Dependency Management with =use-package=
 
-My =emacs.d/= is almost entirely dependant on [[https://github.com/jwiegley/use-package][use-package]].
+My =emacs.d/= is almost entirely dependant on
+[[https://github.com/jwiegley/use-package][use-package]].
 
 #+BEGIN_QUOTE
-The =use-package= macro allows you to isolate package configuration in your .emacs file in a way that is both performance-oriented and, well, tidy. I created it because I have over 80 packages that I use in Emacs, and things were getting difficult to manage. Yet with this utility my total load time is around 2 seconds, with no loss of functionality!
+The =use-package= macro allows you to isolate package configuration in your
+.emacs file in a way that is both performance-oriented and, well, tidy.
+I created it because I have over 80 packages that I use in Emacs, and things
+were getting difficult to manage. Yet with this utility my total load time is
+around 2 seconds, with no loss of functionality!
 #+END_QUOTE
 
-If running Emacs for the first time, you need to install =use-package= manually.
-#+BEGIN_SRC text
-M-x package-install [RET] use-package [RET]
+#+BEGIN_SRC emacs-lisp
+  (unless (package-installed-p 'use-package)
+    (package-install 'use-package))
+  (setq use-package-verbose t)
+  (setq use-package-always-ensure t)
+  (require 'use-package)
 #+END_SRC
+
 
 Start using =use-package=
 #+BEGIN_SRC emacs-lisp
-  (eval-when-compile
-    (require 'use-package))
   (require 'diminish)                ;; if you use :diminish
   (require 'bind-key)                ;; if you use any :bind variant
+  (use-package dash)
+  (use-package auto-compile
+    :config (auto-compile-on-load-mode))
+  (setq load-prefer-newer t)
 #+END_SRC
 
 ** Custom Packages
@@ -120,6 +133,10 @@ Add custom packages directory to the =load-path=.
 #+BEGIN_SRC emacs-lisp
   (add-to-list 'load-path (concat user-emacs-directory "packages/"))
 #+END_SRC
+
+* Personal Information
+(setq user-full-name "Chirag Raman"
+      user-mail-address "chirag.raman@gmail.com")
 
 * Essentials
 Some quick essentials.
@@ -150,8 +167,7 @@ Some quick essentials.
 
   ;; Write backup files to own directory
   (setq backup-directory-alist
-        `(("." . ,(expand-file-name
-                   (concat user-emacs-directory "backups")))))
+        `(("." . ,(expand-file-name (concat user-emacs-directory "backups")))))
 
   ;; Make backups of files, even when they're in version control.
   (setq vc-make-backup-files t)
@@ -172,10 +188,10 @@ Some quick essentials.
 #+END_SRC
 
 * Better Defaults
-Better Emacs Default Settings. Heavily influenced from [[https://github.com/magnars/.emacs.d/blob/master/sane-defaults.el][sane-defaults.el]].
+Better Emacs Default Settings. Heavily influenced from Magnar's
+[[https://github.com/magnars/.emacs.d/blob/master/settings/sane-defaults.el]
+ [sane-defaults.el]].
 #+BEGIN_SRC emacs-lisp
-  ;;------[Begin Sanity]--------------------------------------------------
-
   ;; Ido, Yes!
   (use-package ido
                :config
@@ -237,7 +253,7 @@ Better Emacs Default Settings. Heavily influenced from [[https://github.com/magn
   ;; Smooth Scroll:
   (setq mouse-wheel-scroll-amount '(1 ((shift) .1))) ;; one line at a time
 
-  ;; Scrol one line when hitting bottom of window
+  ;; Scroll one line when hitting bottom of window
   (setq scroll-conservatively 10000)
 
   ;; Change Cursor
@@ -283,6 +299,7 @@ Better Emacs Default Settings. Heavily influenced from [[https://github.com/magn
         mouse-yank-at-point t)
 
 #+END_SRC
+
 * Keybindings
 #+BEGIN_QUOTE
 There are a number of ways to bind keys in Emacs, but I find
@@ -296,48 +313,13 @@ through =bind-key= and any overrides or conflicts. This is really
 the killer convenience of using =bind-key=.
 #+END_QUOTE
 
-** Dvorak
-Since I use the Dvorak keyboard layout, I have made some changes to the
-default key bindings, so that Emacs is more comfortable to use.
-
-Mainly, switching =C-x= and =M-x= to =C-t= and =M-t=.
-
-#+BEGIN_SRC emacs-lisp
-  ;; Make a minor mode for dvorak key swap
-  ;; For now just use for C-x, later use for all swaps.
-  (defvar my-dvorak-keys-minor-mode-map (make-keymap) "my dvorak keymap.")
-
-  (define-minor-mode my-dvorak-keys-minor-mode
-    "A minor mode so that my key settings override any major modes."
-    t " my-dvorak-keys" 'my-dvorak-keys-minor-mode-map)
-
-  ;; enable the minor-mode
-  (my-dvorak-keys-minor-mode 1)
-  (diminish 'my-dvorak-keys-minor-mode)
-
-  ;; 'C-x' has been switced to 'C-t' for ease of Dvorak use.
-  ;; The other option is to assign ctl-x-map to a single key
-  (bind-key "C-t" ctl-x-map)
-  (global-unset-key (kbd "C-t C-t"))
-
-  ;; Make C-x work as previous C-t binding
-  (bind-key "C-x" 'transpose-chars my-dvorak-keys-minor-mode-map)
-
-  ;; Make M-x work as previous M-t binding
-  (bind-key "M-x" 'transpose-words my-dvorak-keys-minor-mode-map)
-
-  ;; This is already set under 'smex'
-  ;; Make M-t work as previous M-x binding
-  (global-set-key (kbd "M-t") 'execute-extended-command)
-#+END_SRC
-
 ** Exiting
 I don't like to quit Emacs on accident, and I find closing frames more useful.
 
 #+BEGIN_SRC emacs-lisp
-  ;; The mnemonic is C-t REALLY QUIT
-  (bind-key "C-t r q" 'save-buffers-kill-terminal my-dvorak-keys-minor-mode-map)
-  (bind-key "C-t C-c" 'delete-frame my-dvorak-keys-minor-mode-map)
+  ;; The mnemonic is C-x REALLY QUIT
+  (bind-key "C-x r q" 'save-buffers-kill-terminal)
+  (bind-key "C-x C-c" 'delete-frame)
 #+END_SRC
 
 ** Improvements
@@ -346,75 +328,68 @@ I don't like to quit Emacs on accident, and I find closing frames more useful.
   (bind-key "<home>" 'move-beginning-of-line)
   (bind-key "<end>" 'move-end-of-line)
 
-  ;; From better defaults
+  ;; From 'better-defaults.el'
   (bind-keys*
    ("M-/" . hippie-expand)
    ("C-s" . isearch-forward-regexp)
    ("C-r" . isearch-backward-regexp)
    ("C-M-s" . isearch-forward)
    ("C-M-r" . isearch-backward))
-  (bind-key "C-t C-b" 'ibuffer my-dvorak-keys-minor-mode-map)
+   ("C-x C-b" . ibuffer)
+   ("M-z" . zap-up-to-char))
+
+  ;; Completion that uses many different methods to find options.
+  (bind-key "C-." 'hippie-expand-no-case-fold)
+  (bind-key "C-:" 'hippie-expand-lines)
+  (bind-key "C-," 'completion-at-point)
 
   ;; Set Regexp Alignment
-  (bind-key "C-t a r" 'align-regexp my-dvorak-keys-minor-mode-map)
+  (bind-key "C-x a r" 'align-regexp)
 
   ;; Joins Lines into one (from the bottom up)
   (bind-key  "M-j" '(lambda () (interactive) (join-line -1)))
 
   ;; Kill line from the left
   (bind-key "<s-backspace>" '(lambda () (interactive) (kill-line 0)))
-
-  ;; Sometimes I'd like to set "global bindings" to override some minor modes
-  (bind-key* "C-." 'flyspell-auto-correct-word)
 #+END_SRC
 
 ** Unbind keys
 Sometimes there are system keybindings that get in the way and will be used later.
 
 #+BEGIN_SRC emacs-lisp
-(dolist (keys '("<M-up>" "<M-down>" "<s-left>" "<s-right>"
-                "s-c" "s-v" "s-x" "s-v" "s-q" "s-s" "s-w"
-                "s-a" "s-o" "s-n" "s-p" "s-k" "s-u" "s-m"
-                "s-f" "s-z" "s-g" "s-d" "s-," "s-:" "s-e"
-                "s-t" "C-z"))
+  (dolist (keys '("<M-up>" "<M-down>" "<s-left>" "<s-right>"
+                  "s-c" "s-v" "s-x" "s-v" "s-q" "s-s" "s-w"
+                  "s-a" "s-o" "s-n" "s-p" "s-k" "s-u" "s-m"
+                  "s-f" "s-z" "s-g" "s-d" "s-," "s-:" "s-e"
+                  "s-t" "C-z"))
   (global-unset-key (kbd keys)))
 #+END_SRC
 
 * Appearance
 ** Theme
-I use a modified [[https://github.com/chriskempson/base16][Base16]] theme which is similar to the [[https://github.com/robertmeta/nofrils][nofrils]] vim colorscheme. It only highlights comments, strings, and errors in programming modes.
+I use the fantastic [[http://ethanschoonover.com/solarized]
+[Solarized theme by Ethan Schoonover]].
 
 #+BEGIN_SRC emacs-lisp
-  (setq custom-theme-directory (concat user-emacs-directory "themes/"))
+  (if (display-graphic-p)
+      (progn
+        (tool-bar-mode 0)
+        (scroll-bar-mode 0)))
 
-  ;; last t is for NO-ENABLE
-  (load-theme 'base3-dark t t)
-  (load-theme 'base3-light t t)
+  (use-package solarized-theme
+    :if (display-graphic-p)
+    :custom (solarized-use-variable-pitch nil)
+    :config
+    (defun toggle-theme ()
+      "Switch between Solarized variants."
+      (interactive)
+      (load-theme (if (eq (car custom-enabled-themes) 'solarized-dark)
+                      'solarized-light 'solarized-dark)
+                  t))
+    (load-theme 'solarized-dark t))
 
-  ;; Use the default theme at the shell.
-  (defun mb/pick-color-theme (frame)
-    (select-frame frame)
-    (if (window-system frame)
-        (enable-theme 'base3-dark)
-      (disable-theme 'base3-dark)))
-  (add-hook 'after-make-frame-functions 'mb/pick-color-theme)
-
-  ;; For when started with emacs or emacs -nw rather than emacs --daemon
-  (when window-system
-    (enable-theme 'base3-dark))
-
-
-  (defun toggle-theme-dark-light ()
-    "Toggles the current theme between 'light' and 'dark' variants."
-    (interactive)
-    (if (string= (face-background 'default) "#2d2d2d")
-        (progn
-          (disable-theme 'base3-dark)
-          (enable-theme 'base3-light))
-      (when (string= (face-background 'default) "#fdf6e3")
-        (progn
-          (disable-theme 'base3-light)
-          (enable-theme 'base3-dark)))))
+  (if (not (display-graphic-p))
+      (load-theme 'tango-dark t))
 #+END_SRC
 
 ** Pretty Mode
@@ -469,6 +444,7 @@ Display certain characters as Unicode symbols.
   (bind-key "M-4" 'kill-buffer-and-window)
   (bind-key "M-=" 'balance-windows)
 #+END_SRC
+
 ** Mode Line
 *** Date
 Display the date on the mode line.
@@ -483,12 +459,12 @@ Display the date on the mode line.
 #+BEGIN_SRC emacs-lisp
   (setq battery-mode-line-format " [%b%p%%|%t]")
   (display-battery-mode t)
-
 #+END_SRC
+
 ** Other
 Don't defer screen updates when performing operations
 #+BEGIN_SRC emacs-lisp
-(setq redisplay-dont-pause t)
+  (setq redisplay-dont-pause t)
 #+END_SRC
 
 * Major Modes
@@ -1006,6 +982,7 @@ A distraction free writing environment.
   (use-package writeroom-mode
     :ensure t)
 #+END_SRC
+
 * Minor Modes
 ** Smex
 [[https://github.com/nonsequitur/smex][Smex]] brings ido searching to =M-x=.
@@ -1013,14 +990,14 @@ A distraction free writing environment.
 #+BEGIN_SRC emacs-lisp
   (use-package smex
     :ensure t
-    :bind (("M-t" . smex)
-           ("M-T" . smex-major-mode-commands)
-           ;; This is old M-t.
-           ("C-c C-c M-t" . execute-extended-command)))
+    :bind (("M-x" . smex)
+           ("M-X" . smex-major-mode-commands)
+           ("C-c C-c M-x" . execute-extended-command)))
 #+END_SRC
 
 ** Company
-[[http://company-mode.github.io/][Company]] is a text completion framework for Emacs. It stands for "complete anything".
+[[http://company-mode.github.io/][Company]] is a text completion framework for
+Emacs. It stands for "complete anything".
 #+BEGIN_SRC emacs-lisp
   (use-package company
     :ensure t
