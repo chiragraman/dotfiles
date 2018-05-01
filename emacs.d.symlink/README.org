@@ -77,7 +77,7 @@ emacs -q -l ~/my-init-file.el
 
 * Identification and Location
 I use the location information to toggle dark and light theme variants and don't
-like hardcoded values
+like hard-coded values
 #+begin_src emacs-lisp
   (setq user-full-name "Chirag Raman"
         user-mail-address "chirag.raman@gmail.com")
@@ -170,7 +170,7 @@ better key bind settings.
   (require 'general)
 #+end_src
 
-*** ==auto-compile==
+*** =auto-compile=
 
 Enable auto-compile and avoid loading outdated files
 
