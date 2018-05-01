@@ -81,8 +81,8 @@ like hard-coded values
 #+begin_src emacs-lisp
   (setq user-full-name "Chirag Raman"
         user-mail-address "chirag.raman@gmail.com")
-  (defvar craman/current_latitude 40.4)
-  (defvar craman/current_longitude -80)
+  (defconst craman/current_latitude 40.4)
+  (defconst craman/current_longitude -80)
 #+end_src
 
 * Package Setup
