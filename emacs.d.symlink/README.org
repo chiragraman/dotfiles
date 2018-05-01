@@ -466,12 +466,6 @@ Don't defer screen updates when performing operations
 * Major Modes
 ** C-Family
 #+BEGIN_SRC emacs-lisp
-  ;; Automatically newline-and-indent for opening curly braces
-  ;; (add-hook 'c-mode-common-hook
-  ;;           (electric-pair-local-mode 1))
-  ;; (add-hook 'css-mode-hook
-  ;;           (electric-pair-local-mode 1))
-
   ;; Use One True Brace Style (K&R style indentation)
   (setq c-default-style "k&r"
         c-basic-offset 4)
