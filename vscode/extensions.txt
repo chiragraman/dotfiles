@@ -1,7 +1,7 @@
 # Editor
-hiro-sun.vscode-emacs
+rkwan94.vscode-emacs-improved
 psioniq.psi-header
 
 # Languages
-donjayamanne.python
+ms-python.python
 ms-vscode.cpptools
