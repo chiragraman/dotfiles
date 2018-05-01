@@ -364,8 +364,7 @@ later.
 
 * Appearance
 ** Theme
-I use the fantastic [[http://ethanschoonover.com/solarized]
-[Solarized theme by Ethan Schoonover]].
+I use the fantastic [[http://ethanschoonover.com/solarized][Solarized theme by Ethan Schoonover]].
 
 #+BEGIN_SRC emacs-lisp
   (if (display-graphic-p)
