@@ -195,7 +195,6 @@ most bootstrapped package logs will take advantage of this.
 I love the [[http://ethanschoonover.com/solarized][Solarized theme by Ethan Schoonover]].
 
 #+begin_src emacs-lisp
-  (craman/package-ensure-installed 'solarized-theme)
   (use-package solarized-theme
     :ensure t
     :defer
@@ -210,7 +209,6 @@ for switching between themes based on daytime. I use it to switch between the
 dark and light variants of Solarized.
 
 #+begin_src emacs-lisp
-  (craman/package-ensure-installed 'circadian)
   (use-package circadian
   :ensure t
   :config
