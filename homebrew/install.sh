@@ -16,7 +16,7 @@ then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   elif test "$(echo $(uname -s) | cut -c 1-5)" = "Linux"
   then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
     echo "\n  Installing Linuxbrew dependencies\n"
     sudo apt-get -qq install build-essential
   fi

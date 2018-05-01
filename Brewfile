@@ -1,7 +1,7 @@
 cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
-tap 'homebrew/versions'
+tap 'homebrew/core'
 
 brew 'cmake'
 brew 'grc'
@@ -30,12 +30,13 @@ brew 'gnu-indent'
 brew 'gnu-getopt'
 
 tap 'caskroom/cask'
+tap 'railwaycat/emacsmacport'
 tap 'caskroom/fonts'
 tap 'caskroom/versions'
 
 cask 'android-file-transfer'
-cask 'visual-studio-code'
 cask 'diffmerge'
-cask 'google-drive'
+cask 'emacs-mac'
 cask 'slack'
+cask 'visual-studio-code'
 cask 'vlc'
