@@ -16,18 +16,14 @@ This configuration is designed for Emacs 24.5 and above.
 #+END_SRC
 
 * Credits
-This =emacs.d/= was heavily based on [[https://github.com/anschwa/emacs.d] \
-[Adam Schwartz' configuration]], which in turn was inspired by the following.
+This =emacs.d/= was heavily based on [[https://github.com/anschwa/emacs.d][Adam Schwartz' configuration]],
+which in turn was inspired by the following.
 
 - [[https://github.com/magnars/.emacs.d][Magnar Sveen's emacs.d]]
-- [[https://github.com/jhenahan/emacs.d/blob/master/emacs-init.org] \
-   [Jack Henahan's init.org]]
-- [[https://github.com/seth/my-emacs-dot-d/blob/master/emacs-init.org] \
-   [Seth Falcon's emacs-init-org]]
-- [[https://github.com/steckerhalter/steckemacs/blob/master/steckemacs.org] \
-   [Steckerhalter's Steckemacs]]
-- [[http://endlessparentheses.com/init-org-Without-org-mode.html] \
-   [Artur Malabarba's init.org Without org-mode]]
+- [[https://github.com/jhenahan/emacs.d/blob/master/emacs-init.org][Jack Henahan's init.org]]
+- [[https://github.com/seth/my-emacs-dot-d/blob/master/emacs-init.org][Seth Falcon's emacs-init-org]]
+- [[https://github.com/steckerhalter/steckemacs/blob/master/steckemacs.org][Steckerhalter's Steckemacs]]
+- [[http://endlessparentheses.com/init-org-Without-org-mode.html][Artur Malabarba's init.org Without org-mode]]
 
 * Prerequisites
 ** Mac OS X
@@ -189,8 +185,8 @@ Some quick essentials.
 
 * Better Defaults
 Better Emacs Default Settings. Heavily influenced from Magnar's
-[[https://github.com/magnars/.emacs.d/blob/master/settings/sane-defaults.el] \
- [sane-defaults.el]].
+[[https://github.com/magnars/.emacs.d/blob/master/settings/sane-defaults.el][sane-defaults.el]].
+
 #+BEGIN_SRC emacs-lisp
   ;; Ido, Yes!
   (use-package ido
