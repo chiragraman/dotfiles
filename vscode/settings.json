@@ -1,6 +1,7 @@
 {
-    // Themes
+    // Appearance
     "workbench.colorTheme": "Solarized Dark",
+    "workbench.iconTheme": "vscode-icons",
     // Fonts
     "editor.fontFamily": "SF Mono",
     "editor.fontLigatures": true,
@@ -65,5 +66,7 @@
         "--ignored-classes=numpy,torch,cv2"
     ],
     // Default C++ linting using IntelliSense
-    "C_Cpp.intelliSenseEngine": "Default"
+    "C_Cpp.intelliSenseEngine": "Default",
+    // Auto Fetch Remote
+    "git.autofetch": true
 }
