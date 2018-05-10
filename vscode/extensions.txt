@@ -1,7 +1,14 @@
 # Editor
 rkwan94.vscode-emacs-improved
-psioniq.psi-header
+robertohuertasm.vscode-icons
+
+# Project and Task Management
+fabiospampinato.vscode-projects-plus
+fabiospampinato.vscode-todo-plus
+fabiospampinato.vscode-projects-plus-todo-plus
 
 # Languages
 ms-python.python
 ms-vscode.cpptools
+psioniq.psi-header
+
