@@ -10,5 +10,6 @@ fabiospampinato.vscode-projects-plus-todo-plus
 # Languages
 ms-python.python
 ms-vscode.cpptools
+ms-vscode.csharp
 psioniq.psi-header
 
