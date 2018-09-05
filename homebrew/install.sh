@@ -5,21 +5,7 @@
 # This installs some of the common dependencies needed (or at least desired)
 # using Homebrew.
 
-# Check for Homebrew
-if test ! "$(which brew)"
-then
-  echo "  Installing Homebrew for you\n"
-
-  # Install the correct homebrew for each OS type
-  if test "$(uname)" = "Darwin"
-  then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  elif test "$(echo $(uname -s) | cut -c 1-5)" = "Linux"
-  then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-    echo "\n  Installing Linuxbrew dependencies\n"
-    sudo apt-get -qq install build-essential
-  fi
+# Check for Homebrew and Install
+if test "$(uname)" = "Darwin" -a ! "$(which brew)"; then
+   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
-
-exit 0
