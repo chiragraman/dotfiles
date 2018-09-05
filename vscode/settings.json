@@ -59,7 +59,6 @@
     "editor.rulers": [79],
     "window.zoomLevel": 0,
     "files.trimTrailingWhitespace": true,
-    "editor.detectIndentation": false,
     // Whitelist numpy, torch to remove lint errors
     "python.linting.pylintArgs": [
         "--extension-pkg-whitelist=numpy,torch,cv2",
