@@ -14,7 +14,7 @@ ln -sf "$DOTFILES"/vscode/snippets/ "$CONFIG_ROOT"/snippets
 
 # Install extensions
 EXTENSIONS=(
-  $(sed "s/[[:space:]]*#.*//;/^[[:space:]]*$/d" extensions.txt)
+  $(sed "s/[[:space:]]*#.*//;/^[[:space:]]*$/d" $(dirname "$0")/extensions.txt)
 )
 
 for VARIANT in "code" \
