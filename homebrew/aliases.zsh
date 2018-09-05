@@ -9,7 +9,7 @@ if which brew >/dev/null 2>&1; then
 		            	rm -rf "$(brew --cache)"
 		            	;;
 	        	bump)
-			            command brew update
+                        command brew update
 			            command brew upgrade
 			            brew cleanup
 			            ;;
