@@ -59,6 +59,7 @@
     "editor.rulers": [79],
     "window.zoomLevel": 0,
     "files.trimTrailingWhitespace": true,
+    "editor.detectIndentation": false,
     // Whitelist numpy, torch to remove lint errors
     "python.linting.pylintArgs": [
         "--extension-pkg-whitelist=numpy,torch,cv2",
@@ -68,5 +69,5 @@
     // Default C++ linting using IntelliSense
     "C_Cpp.intelliSenseEngine": "Default",
     // Auto Fetch Remote
-    "git.autofetch": true
+    "git.autofetch": true,
 }
