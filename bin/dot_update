@@ -8,6 +8,10 @@
 export DOTFILES="$HOME/.dotfiles"
 cd "$DOTFILES" || exit 1
 
+# Load custom config if any
+# shellcheck disable=SC1090
+[ -f ~/.localrc ] && . ~/.localrc
+
 # Set OS defaults
 echo "› Set OS defaults"
 "$DOTFILES/osx/set-defaults.sh"
