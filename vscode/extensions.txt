@@ -2,6 +2,11 @@
 rkwan94.vscode-emacs-improved
 robertohuertasm.vscode-icons
 
+# Writing
+davidanson.vscode-markdownlint
+dougfinke.vscode-pandoc
+notzaki.pandocciter
+
 # Project and Task Management
 fabiospampinato.vscode-projects-plus
 fabiospampinato.vscode-todo-plus
