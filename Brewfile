@@ -35,6 +35,7 @@ tap 'caskroom/fonts'
 tap 'caskroom/versions'
 
 cask 'android-file-transfer'
+cask 'basictex'
 cask 'diffmerge'
 cask 'emacs-mac'
 cask 'slack'
