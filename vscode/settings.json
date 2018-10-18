@@ -69,4 +69,6 @@
     "C_Cpp.intelliSenseEngine": "Default",
     // Auto Fetch Remote
     "git.autofetch": true,
+    "workbench.activityBar.visible": true,
+    "workbench.statusBar.visible": false,
 }
