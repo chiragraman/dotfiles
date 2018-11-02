@@ -69,4 +69,13 @@
     "C_Cpp.intelliSenseEngine": "Default",
     // Auto Fetch Remote
     "git.autofetch": true,
+    // Remote FS setup
+    "remotefs.remote": {
+        "bastion-projects": {
+            "scheme": "sftp",
+            "host": "linux-bastion.tudelft.nl",
+            "username": "craman",
+            "rootPath": "/home/nfs/craman/Projects/"
+        }
+    },
 }
