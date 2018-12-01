@@ -71,7 +71,7 @@
     "git.autofetch": true,
     // Remote FS setup
     "remotefs.remote": {
-        "bastion-projects": {
+        "insy-projects": {
             "scheme": "sftp",
             "host": "linux-bastion.tudelft.nl",
             "username": "craman",
