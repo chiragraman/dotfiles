@@ -12,6 +12,9 @@ fabiospampinato.vscode-projects-plus
 fabiospampinato.vscode-todo-plus
 fabiospampinato.vscode-projects-plus-todo-plus
 
+# Remote Setup
+liximomo.remotefs
+
 # Languages
 ms-python.python
 ms-vscode.cpptools
