@@ -58,6 +58,8 @@
     // Miscellaneous editor settings
     "editor.rulers": [79],
     "window.zoomLevel": 0,
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
     "files.trimTrailingWhitespace": true,
     // Whitelist numpy, torch to remove lint errors
     "python.linting.pylintArgs": [

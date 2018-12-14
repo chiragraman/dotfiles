@@ -7,11 +7,6 @@ davidanson.vscode-markdownlint
 dougfinke.vscode-pandoc
 notzaki.pandocciter
 
-# Project and Task Management
-fabiospampinato.vscode-projects-plus
-fabiospampinato.vscode-todo-plus
-fabiospampinato.vscode-projects-plus-todo-plus
-
 # Remote Setup
 liximomo.remotefs
 
