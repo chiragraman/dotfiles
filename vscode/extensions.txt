@@ -16,3 +16,5 @@ ms-vscode.cpptools
 ms-vscode.csharp
 psioniq.psi-header
 
+# Project Management
+mkloubert.vscode-kanban
