@@ -39,6 +39,10 @@
             "mapTo": "ruby"
         },
         {
+            "language": "yaml",
+            "mapTo": "ruby"
+        },
+        {
             "language": "git-commit",
             "mapTo": "ruby"
         }
@@ -80,4 +84,8 @@
             "rootPath": "/home/nfs/craman/Projects/"
         }
     },
+    "editor.minimap.enabled": false,
+    "terminal.integrated.rendererType": "dom",
+    "terminal.integrated.inheritEnv": false,
+    "latex-workshop.view.pdf.viewer": "tab"
 }
