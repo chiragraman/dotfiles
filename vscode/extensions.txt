@@ -1,6 +1,7 @@
 # Editor
-rkwan94.vscode-emacs-improved
-robertohuertasm.vscode-icons
+esbenp.prettier-vscode
+PKief.material-icon-theme
+pnp.polacode
 
 # Writing
 davidanson.vscode-markdownlint
