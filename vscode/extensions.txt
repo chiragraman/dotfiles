@@ -6,6 +6,7 @@ pnp.polacode
 # Writing
 davidanson.vscode-markdownlint
 dougfinke.vscode-pandoc
+james-yu.latex-workshop
 notzaki.pandocciter
 
 # Remote Setup
@@ -16,6 +17,7 @@ ms-python.python
 ms-vscode.cpptools
 ms-vscode.csharp
 psioniq.psi-header
+vincentkos.snippet-creator
 
 # Project Management
 mkloubert.vscode-kanban
