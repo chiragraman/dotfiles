@@ -88,4 +88,7 @@
     "terminal.integrated.rendererType": "dom",
     "terminal.integrated.inheritEnv": false,
     "latex-workshop.view.pdf.viewer": "tab",
+    "polacode.target": "snippet",
+    "polacode.transparentBackground": true,
+    "prettier.useTabs": true,
 }
