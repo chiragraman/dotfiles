@@ -86,7 +86,7 @@
     },
     "editor.minimap.enabled": false,
     "terminal.integrated.rendererType": "dom",
-    "terminal.integrated.inheritEnv": false,
+    "terminal.integrated.inheritEnv": true,
     "latex-workshop.view.pdf.viewer": "tab",
     "polacode.target": "snippet",
     "polacode.transparentBackground": true,

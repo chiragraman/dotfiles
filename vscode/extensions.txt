@@ -10,7 +10,7 @@ james-yu.latex-workshop
 notzaki.pandocciter
 
 # Remote Setup
-liximomo.remotefs
+ms-vscode-remote.remote-ssh
 
 # Languages
 ms-python.python
