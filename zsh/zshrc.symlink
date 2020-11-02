@@ -44,3 +44,19 @@ unset config_files
 # out of your main dotfiles repository (which may be public, like this
 # one), but you'll have access to them in your scripts.
 [[ -a ~/.localrc ]] && source ~/.localrc
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/calanir/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/calanir/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/calanir/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/calanir/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
