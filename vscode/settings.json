@@ -3,7 +3,7 @@
     "workbench.colorTheme": "Solarized Dark",
     "workbench.iconTheme": "material-icon-theme",
     // Fonts
-    "editor.fontFamily": "SF Mono",
+    "editor.fontFamily": "FuraCode Nerd Font",
     "editor.fontLigatures": true,
     // Terminal
     "terminal.integrated.shell.linux": "/usr/bin/zsh",
