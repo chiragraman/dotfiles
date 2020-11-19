@@ -82,4 +82,9 @@
     "polacode.target": "snippet",
     "polacode.transparentBackground": true,
     "prettier.useTabs": true,
+    // Platform setup
+    "remote.SSH.remotePlatform": {
+        "tud278583": "linux"
+    },
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe"
 }
