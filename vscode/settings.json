@@ -36,7 +36,13 @@
         },
         {
             "language": "shellscript",
-            "mapTo": "ruby"
+            "begin": "###",
+            "prefix": "# ",
+            "end": "###",
+            "blankLinesAfter": 2,
+            "beforeHeader": [
+                "#!/bin/sh"
+            ]
         },
         {
             "language": "yaml",
