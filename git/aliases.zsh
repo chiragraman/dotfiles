@@ -22,6 +22,6 @@ gi() {
 }
 
 git config --global --add alias.permission-resetb \
-    '!git diff --no-ext-diff -p -R --no-color --diff-filter=d \
+    '!git diff --no-ext-diff -p -R --no-color \
         | grep -E "^(diff|(old|new) mode)" --color=never \
         | git apply'
