@@ -15,7 +15,14 @@ alias gcam='git commit -a -m'
 alias gs='git status -sb'
 alias gcb='git-copy-branch-name'
 alias gpr='gp && open-pr'
+alias gpermres='git permission-resetb'
 
 gi() {
   curl -s "https://www.gitignore.io/api/$*";
 }
+
+git config --global --add alias.permission-resetb \
+    '!git diff -p --no-ext-diff --no-color --diff-filter=d \
+        | grep -E "^(diff|old mode|new mode)" \
+        | sed -e "s/^old/NEW/;s/^new/old/;s/^NEW/new/" \
+        | git apply'
