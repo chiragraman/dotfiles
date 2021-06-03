@@ -1,6 +1,6 @@
 The MIT License
 
-Copyright (c) Carlos Becker, http://carlosbecker.com
+Copyright (c) Chirag Raman, <http://chiragraman.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
