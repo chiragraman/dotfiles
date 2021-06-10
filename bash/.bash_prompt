@@ -1,0 +1,188 @@
+# Shell prompt based on the Solarized Dark theme.
+# Based on Mathias' prompt: https://github.com/mathiasbynens/dotfiles/blob/master/.bash_prompt
+# which is in turn heavily inspired by @necolas’s prompt: https://github.com/necolas/dotfiles
+# iTerm → Profiles → Text → use 13pt Monaco with 1.1 vertical spacing.
+
+if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
+	export TERM='gnome-256color';
+elif infocmp xterm-256color >/dev/null 2>&1; then
+	export TERM='xterm-256color';
+fi;
+
+git_info() {
+    # Reset info variables
+    prompt_git_branch=
+    prompt_git_status=
+
+    # Check if the current directory is in a Git repository.
+	git rev-parse --is-inside-work-tree &>/dev/null || return;
+
+	# Ensure the index is up to date.
+	#git update-index --really-refresh -q &>/dev/null;
+
+	# Check for uncommitted changes in the index.
+	#if ! $(git diff --quiet --ignore-submodules --cached); then
+	#	prompt_git_status+=$GIT_STATUS_UNCOMMITED;
+	#fi;
+
+	# Check for unstaged changes.
+	#if ! $(git diff-files --quiet --ignore-submodules --); then
+	#	prompt_git_status+=$GIT_STATUS_UNSTAGED;
+	#fi;
+
+	# Check for untracked files.
+	#if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+	#	prompt_git_status+=$GIT_STATUS_UNTRACKED;
+	#fi;
+
+	# Check git arrows
+	#git_check_arrows
+	#prompt_git_status+=${git_arrows}
+
+	# Check for stashed files.
+	#if $(git rev-parse --verify refs/stash &>/dev/null); then
+	#	prompt_git_status+=$GIT_STATUS_STASHED;
+	#fi;
+
+
+	# If the git status is set, add the prefix and suffix
+	#[ -n "${prompt_git_status}" ] && \
+	#prompt_git_status=" $GIT_STATUS_PREFIX${prompt_git_status}$GIT_STATUS_SUFFIX";
+
+	# Get the short symbolic ref.
+	# If HEAD isn’t a symbolic ref, get the short SHA for the latest commit
+	# Otherwise, just give up.
+	prompt_git_branch="$(git symbolic-ref --quiet --short HEAD 2>/dev/null || \
+		git describe --all --exact-match HEAD 2> /dev/null || \
+		git rev-parse --short HEAD 2>/dev/null || \
+		echo '(unknown)')";
+
+	# Print the branch name and status
+	echo " \[${white}\]on\[${reset}\] \[${cyan}\]${prompt_git_branch}\[${reset}\]"
+	#echo "\[${neon}\]${prompt_git_status}\[${reset}\]"
+}
+
+#cheers Sindre Sorhus <https://github.com/sindresorhus/pure>
+git_check_arrows() {
+	# Reset git arrows
+	git_arrows=
+
+	# Check if there is an upstream configured for this branch
+	git rev-parse --abbrev-ref @'{u}' &>/dev/null || return
+
+	local arrow_status
+
+    # Check git left and right arrow_status
+	arrow_status="$(git rev-list --left-right --count HEAD...@'{u}' 2>/dev/null)"
+
+    # Exit if the command failed
+	(( !$? )) || return
+
+	# Left and right are tab-separated, split on tab and store as array
+	IFS=$'\t' read -ra arrow_array <<< "$arrow_status"
+	local arrows left=${arrow_array[0]} right=${arrow_array[1]}
+	
+	[[ $(($right+0)) -gt 0 ]] && arrows+=$GIT_STATUS_BEHIND;
+	[[ $(($left+0)) -gt 0 ]] && arrows+=$GIT_STATUS_AHEAD;
+
+	[[ -n $arrows ]] && git_arrows="${arrows}"
+}
+
+virtualenv_info() {
+    # Reset variables
+    prompt_virtual_env=
+
+    # Return if not in a virtual environment
+    [[ -z $CONDA_DEFAULT_ENV ]] && return
+
+    # If we made it till here, set the prompt variable
+    prompt_virtual_env="$VIRTUAL_ENV_PREFIX${CONDA_DEFAULT_ENV##*/}$VIRTUAL_ENV_SUFFIX"
+
+	echo "\[${blue}\]${prompt_virtual_env}\[${reset}\]"
+}
+
+
+if tput setaf 1 &> /dev/null; then
+	tput sgr0; # reset colors
+	bold=$(tput bold);
+	reset=$(tput sgr0);
+	# Solarized colors, taken from http://git.io/solarized-colors.
+	black=$(tput setaf 0);
+	blue=$(tput setaf 33);
+	cyan=$(tput setaf 37);
+	green=$(tput setaf 64);
+	orange=$(tput setaf 166);
+	purple=$(tput setaf 125);
+	red=$(tput setaf 124);
+	violet=$(tput setaf 61);
+	white=$(tput setaf 15);
+	yellow=$(tput setaf 136);
+else
+	bold='';
+	reset="\e[0m";
+	black="\e[1;30m";
+	blue="\e[1;34m";
+	cyan="\e[1;36m";
+	green="\e[1;32m";
+	orange="\e[1;33m";
+	purple="\e[1;35m";
+	red="\e[1;31m";
+	violet="\e[1;35m";
+	white="\e[1;37m";
+	yellow="\e[1;33m";
+fi;
+
+#Set symbols for the prompt
+GIT_STATUS_PREFIX="["
+GIT_STATUS_SUFFIX="]"
+GIT_STATUS_AHEAD="↑"
+GIT_STATUS_BEHIND="↓"
+GIT_STATUS_UNTRACKED="?"
+GIT_STATUS_UNSTAGED="!"
+GIT_STATUS_UNCOMMITED="+"
+GIT_STATUS_STASHED="$"
+VIRTUAL_ENV_PREFIX="<"
+VIRTUAL_ENV_SUFFIX=">"
+
+# Highlight the user name when logged in as root.
+if [[ "${USER}" == "root" ]]; then
+	userStyle="${red}";
+else
+	userStyle="${orange}";
+fi;
+
+# Highlight the hostname when connected via SSH.
+if [[ "${SSH_TTY}" ]]; then
+	hostStyle="${bold}${red}";
+else
+	hostStyle="${yellow}";
+fi;
+
+prompt_command() {
+
+	# Capture the exit status of the previous command
+	if [ $? -eq 0 ]; then
+		exitStyle="${green}";
+	else
+		exitStyle="${red}";
+	fi;
+
+	# Set the terminal title to the current working directory.
+	PS1="\[\033]0;\w\007\]";
+	PS1+="\[${bold}\]\n"; # newline
+	PS1+="$(virtualenv_info) "; # conda env
+	# PS1+="\[${exitStyle}\][\!] "; # history number and previous command exit status
+	PS1+="\[${userStyle}\]\u"; # username
+	PS1+="\[${white}\] at ";
+	PS1+="\[${hostStyle}\]\h"; # host
+	PS1+="\[${white}\] in ";
+	PS1+="\[${green}\]\w"; # working directory
+	PS1+="$(git_info)"; # Git repository details
+	PS1+="\n";
+	PS1+="\[${bold}${white}\]❯ \[${reset}\]"; # `$` (and reset color)
+
+	PS2="\[${yellow}\]→ \[${reset}\]";
+	#export PS2;
+}
+
+PROMPT_COMMAND=prompt_command
