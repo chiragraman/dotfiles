@@ -8,7 +8,7 @@ export PROJECTS=~/Projects
 # evaluate dircolors if it exists
 if [ "$(uname)" = "Linux" ]; then
   d=.dircolors
-  test -r $d && eval "$(dircolors $d)"
+  test -r $d && eval "$(dircolors -p $d)"
 elif [ "$(uname -s)" = "Darwin" ]; then
     eval `gdircolors -b ~/.dircolors.256dark`
 fi
@@ -40,6 +40,9 @@ done
 
 unset config_files
 
+# Set the theme
+ZSH_THEME="spaceship"
+
 # stash your environment variables in ~/.localrc. This means they'll stay
 # out of your main dotfiles repository (which may be public, like this
 # one), but you'll have access to them in your scripts.
@@ -47,14 +50,14 @@ unset config_files
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/calanir/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/chiragraman/Projects/foss/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/calanir/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/calanir/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/chiragraman/Projects/foss/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/chiragraman/Projects/foss/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/calanir/miniconda3/bin:$PATH"
+        export PATH="/Users/chiragraman/Projects/foss/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup

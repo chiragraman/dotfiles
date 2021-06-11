@@ -1,10 +1,9 @@
 {
-    // Appearance
-    "workbench.colorTheme": "Solarized Dark",
     "workbench.iconTheme": "material-icon-theme",
     // Fonts
-    "editor.fontFamily": "FuraCode Nerd Font",
+    "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
+    "terminal.integrated.fontFamily": "Fira Code",
     // Terminal
     "terminal.integrated.shell.linux": "/usr/bin/zsh",
     // File Header
@@ -67,7 +66,7 @@
     ],
     // Miscellaneous editor settings
     "editor.rulers": [79],
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 2,
     "editor.tabSize": 4,
     "editor.detectIndentation": false,
     "files.trimTrailingWhitespace": true,
@@ -88,9 +87,15 @@
     "polacode.target": "snippet",
     "polacode.transparentBackground": true,
     "prettier.useTabs": true,
-    // Platform setup
-    "remote.SSH.remotePlatform": {
-        "tud278583": "linux"
-    },
-    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe"
+    "workbench.colorTheme": "Snazzy Operator",
+    "python.jediEnabled": false,
+    "python.languageServer": "Microsoft",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false
 }
