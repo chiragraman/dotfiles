@@ -74,9 +74,7 @@ eval `dircolors ~/.dircolors`
 
 
 # load the prompt
-if [ -f ~/.bash_prompt ]; then
-    . ~/.bash_prompt
-fi
+eval "$(starship init bash)"
 
 unset color_prompt force_color_prompt
 
