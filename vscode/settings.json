@@ -3,7 +3,10 @@
     // Fonts
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
+    "editor.fontSize": 14,
     "terminal.integrated.fontFamily": "Fira Code",
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.gpuAcceleration": "off",
     // Terminal
     "terminal.integrated.shell.linux": "/usr/bin/zsh",
     // File Header
