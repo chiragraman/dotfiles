@@ -1,5 +1,6 @@
 # Editor
 esbenp.prettier-vscode
+aaronthomas.vscode-snazzy-operator
 PKief.material-icon-theme
 pnp.polacode
 
