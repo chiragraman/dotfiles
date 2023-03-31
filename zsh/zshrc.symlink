@@ -8,7 +8,7 @@ export PROJECTS=~/Projects
 # evaluate dircolors if it exists
 if [ "$(uname)" = "Linux" ]; then
   d=.dircolors
-  test -r $d && eval "$(dircolors -p $d)"
+  test -r $d && eval "$(dircolors $d)"
 elif [ "$(uname -s)" = "Darwin" ]; then
     eval $(gdircolors -p > ~/.dircolors)
 fi
