@@ -1,5 +1,8 @@
 # chiragraman does dotfiles
-![screenshot](terminal-screenshot.png)
+<!-- ![screenshot](terminal-screenshot.png) -->
+<p align="center">
+    <img src="terminal-screenshot.png" width="75%"/>
+</p>
 
 Your dotfiles are how you configure your system. These are mine.
 
