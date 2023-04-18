@@ -1,6 +1,4 @@
 {
-    "workbench.iconTheme": "material-icon-theme",
-    // Fonts
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "editor.fontSize": 14,
@@ -90,7 +88,6 @@
     "polacode.target": "snippet",
     "polacode.transparentBackground": true,
     "prettier.useTabs": true,
-    "workbench.colorTheme": "Snazzy Operator",
     "python.jediEnabled": false,
     "python.languageServer": "Microsoft",
     "workbench.editorAssociations": [
@@ -100,5 +97,7 @@
         }
     ],
     "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "workbench.colorTheme": "Snazzy Operator",
+    "workbench.iconTheme": "material-icon-theme"
 }
