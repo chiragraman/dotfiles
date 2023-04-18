@@ -3,7 +3,7 @@
 export DOTFILES=$HOME/.dotfiles
 
 # your project folder that we can `p [tab]` to
-export PROJECTS=~/Projects
+export PROJECTS=~/projects
 
 # evaluate dircolors if it exists
 if [ "$(uname)" = "Linux" ]; then
