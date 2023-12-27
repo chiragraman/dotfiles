@@ -8,13 +8,13 @@ cd "$(dirname $0)"/..
 
 # Run Homebrew through the Brewfile
 if [ "$(uname -s)" = "Darwin" ]; then
-    echo "\n› brew bundle"
+    echo -e "\n› brew bundle"
     brew bundle
 fi
 
 # Find the installers and run them iteratively
-
+info "running install scripts"
 git ls-tree --name-only -r HEAD | grep install.sh | while read -r installer; do
-  echo "\n› ${installer}..."
+  echo -e "\n› ${installer}..."
   sh -c "${installer}"
 done

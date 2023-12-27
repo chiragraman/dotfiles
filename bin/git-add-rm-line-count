@@ -3,8 +3,8 @@ set -eo pipefail
 add_rm_lc() {
   local diff_result added deleted
   diff_result=$(git diff)
-  added=$(echo "$diff_result" | grep -c '^+')
-  deleted=$(echo "$diff_result" | grep -c '^-')
-  echo "${added} additions and ${deleted} deletions."
+  added=$(echo -e "$diff_result" | grep -c '^+')
+  deleted=$(echo -e "$diff_result" | grep -c '^-')
+  echo -e "${added} additions and ${deleted} deletions."
 }
 add_rm_lc "$@"

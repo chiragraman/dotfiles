@@ -19,9 +19,9 @@ extract () {
             *.pax)      pax -r < "$1"                         ;;
             *.pax.Z)    uncompress "$1" --stdout | pax -r     ;;
             *.Z)        uncompress "$1"                       ;;
-            *)          echo "'$1' cannot be extracted/mounted via extract()" ;;
+            *)          echo -e "'$1' cannot be extracted/mounted via extract()" ;;
         esac
     else
-        echo "'$1' is not a valid file"
+        echo -e "'$1' is not a valid file"
     fi
 }

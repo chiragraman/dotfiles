@@ -8,4 +8,4 @@ count=$(git rev-list --count HEAD origin/"$branch"...HEAD)
 [[ "$count" = "1" ]] && s='' || s='s'
 
 git diff --stat origin/"$branch"..HEAD
-echo " $count commit$s total"
+echo -e " $count commit$s total"

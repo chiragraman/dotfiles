@@ -21,7 +21,7 @@ for VARIANT in "code" \
                "code-insiders"
 do
   if hash $VARIANT 2>/dev/null; then
-    echo "\n› Installing extensions for $VARIANT"
+    echo -e "\n› Installing extensions for $VARIANT"
     for EXTENSION in ${EXTENSIONS[@]}
     do
       $VARIANT --install-extension $EXTENSION

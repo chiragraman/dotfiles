@@ -91,7 +91,7 @@ find_zsh() {
 	if which zsh >/dev/null 2>&1 && grep "$(which zsh)" /etc/shells >/dev/null; then
 		which zsh
 	else
-		echo "/bin/zsh"
+		echo -e "/bin/zsh"
 	fi
 }
 
