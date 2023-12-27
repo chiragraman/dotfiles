@@ -17,13 +17,15 @@ echo "› Set OS defaults"
 "$DOTFILES/osx/set-defaults.sh"
 "$DOTFILES/linux/set-defaults.sh"
 
-# Install homebrew
-echo "› homebrew/install.sh"
-"$DOTFILES/homebrew/install.sh"
-source $DOTFILES/homebrew/path.zsh
+if [ "$(uname -s)" = "Darwin" ]; then
+    # Install homebrew
+    echo "› homebrew/install.sh"
+    "$DOTFILES/homebrew/install.sh"
+    source $DOTFILES/homebrew/path.zsh
 
-echo "› brew update"
-brew update
+    echo "› brew update"
+    brew update
+fi
 
 echo "› Grab latest dircolors"
 curl https://github.com/arcticicestudio/nord-dircolors/blob/develop/src/dir_colors > ~/.dircolors

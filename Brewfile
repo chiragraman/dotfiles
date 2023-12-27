@@ -12,11 +12,9 @@ brew 'readline'
 brew 'roundup'
 brew 'shellcheck'
 brew 'spark'
-brew 'the_silver_searcher'
 brew 'tmux'
-brew 'unrar'
+brew 'rar'
 brew 'wget'
-brew 'youtube-dl'
 brew 'zsh'
 
 # gnu stuff
@@ -30,10 +28,8 @@ brew 'gnu-indent'
 brew 'gnu-getopt'
 
 tap 'caskroom/cask'
-tap 'railwaycat/emacsmacport'
 tap 'caskroom/fonts'
 tap 'caskroom/versions'
 
 cask 'basictex'
 cask 'diffmerge'
-cask 'vlc'
