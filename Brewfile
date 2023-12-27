@@ -13,7 +13,6 @@ brew 'roundup'
 brew 'shellcheck'
 brew 'spark'
 brew 'tmux'
-brew 'rar'
 brew 'wget'
 brew 'zsh'
 
