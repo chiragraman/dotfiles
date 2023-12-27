@@ -13,37 +13,37 @@ cd "$DOTFILES" || exit 1
 [ -f ~/.localrc ] && . ~/.localrc
 
 # Set OS defaults
-echo "› Set OS defaults"
+echo "\n› Set OS defaults"
 "$DOTFILES/osx/set-defaults.sh"
 "$DOTFILES/linux/set-defaults.sh"
 
 if [ "$(uname -s)" = "Darwin" ]; then
     # Install homebrew
-    echo "› homebrew/install.sh"
+    echo "\n› homebrew/install.sh"
     "$DOTFILES/homebrew/install.sh"
     source $DOTFILES/homebrew/path.zsh
 
-    echo "› brew update"
+    echo "\n› brew update"
     brew update
 fi
 
-echo "› Grab latest dircolors"
+echo "\n› Grab latest dircolors"
 curl https://github.com/arcticicestudio/nord-dircolors/blob/develop/src/dir_colors > ~/.dircolors
 
 # Update repo
-echo "› git update"
+echo "\n› git update"
 git pull --rebase --stat updates "$(git rev-parse --abbrev-ref HEAD)"
 
 # Update submodules
-echo "› submodules update"
+echo "\n› submodules update"
 git submodule update --init --recursive --remote --merge --quiet
 
 # Run all installs
-echo "› $DOTFILES/script/install"
+echo "\n› $DOTFILES/script/install"
 "$DOTFILES/script/install"
 
 # Update plugin manager
 zplug update
 
-echo "› registering last update"
+echo "\n› registering last update"
 git config --global dotfiles.lastupdate "$(date +%Y%m%d%H%M)"
