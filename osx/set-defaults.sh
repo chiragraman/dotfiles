@@ -36,9 +36,6 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 defaults write com.apple.dock wvous-bl-corner -int 5
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
-# Disable transparency in the menu bar and elsewhere on Yosemite
-defaults write com.apple.universalaccess reduceTransparency -bool false
-
 #
 # Finder
 #
@@ -60,20 +57,6 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
-
-#
-# Safari
-#
-
-# Hide Safari's bookmark bar.
-defaults write com.apple.Safari ShowFavoritesBar -bool false
-
-# Set up Safari for development.
-defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
-defaults write com.apple.Safari IncludeDevelopMenu -bool true
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
-defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 
 #
@@ -122,10 +105,9 @@ defaults write org.m0k.transmission WarningLegal -bool false
 #
 
 # Add the keyboard shortcut CMD + Enter to send an email in Mail.app
-defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\\U21a9"
+sudo defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\\U21a9"
 
-
-# Disable smart quotes as it's annoying for messages that contain code
+# # Disable smart quotes as it's annoying for messages that contain code
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
 
 
@@ -162,36 +144,6 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # Speeding up wake from sleep to 24 hours from an hour
 # http://www.cultofmac.com/221392/quick-hack-speeds-up-retina-macbooks-wake-from-sleep-os-x-tips/
 # sudo pmset -a standbydelay 86400
-
-# disable iTunes fuckin helper
-sudo mv /Applications/iTunes.app/Contents/MacOS/iTunesHelper.app{,-disabled} || true
-
-# also this spotify web helper
-mv ~/Applications/Spotify.app/Contents/MacOS/SpotifyWebHelper{,-disabled} || true
-
-# Android File Transfer disable auto-open when connect.
-mv "/opt/homebrew-cask/Caskroom/android-file-transfer/latest/Android File Transfer.app/Contents/Resources/Android File Transfer Agent.app"{,_DISABLED} || true
-mv "$HOME/Library/Application Support/Google/Android File Transfer/Android File Transfer Agent.app"{,_DISABLED} || true
-
-
-#
-# Terminals
-#
-
-# sleep 1
-# defaults write com.apple.terminal "Default Window Settings" -string "terminal-ocean-dark"
-# defaults write com.apple.terminal "Startup Window Settings" -string "terminal-ocean-dark"
-
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
-curl -L \
-  https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors \
-  > /tmp/Solarized_Dark.itermcolors
-curl -L \
-  https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Light.itermcolors \
-  > /tmp/Solarized_Light.itermcolors
-open /tmp/Solarized_Dark.itermcolors
-open /tmp/Solarized_Light.itermcolors
-sleep 1
 
 #
 # Kill related apps
