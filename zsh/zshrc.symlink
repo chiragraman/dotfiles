@@ -5,14 +5,6 @@ export DOTFILES=$HOME/.dotfiles
 # your project folder that we can `p [tab]` to
 export PROJECTS=~/projects
 
-# evaluate dircolors if it exists
-if [ "$(uname)" = "Linux" ]; then
-  d=.dircolors
-  test -r $d && eval "$(dircolors $d)"
-elif [ "$(uname -s)" = "Darwin" ]; then
-    eval $(gdircolors -p > ~/.dircolors)
-fi
-
 # all of our zsh files
 typeset -U config_files
 config_files=($DOTFILES/**/*.zsh)
@@ -36,6 +28,14 @@ for file in ${(M)config_files:#*/completion.zsh}; do
 done
 
 unset config_files
+
+# evaluate dircolors if it exists
+if [ "$(uname)" = "Linux" ]; then
+  d=.dircolors
+  test -r $d && eval "$(dircolors $d)"
+elif [ "$(uname -s)" = "Darwin" ]; then
+    eval $(gdircolors -p > ~/.dircolors)
+fi
 
 # Set the theme
 ZSH_THEME="spaceship"
