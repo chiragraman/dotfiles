@@ -8,7 +8,7 @@
 ###
 
 
-if command -v brew >/dev/null 2>&1; then
+if command -v brew > /dev/null 2>&1; then
 	brew install zplug
 else
 	curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh

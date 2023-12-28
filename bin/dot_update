@@ -43,6 +43,7 @@ echo -e "\n› $DOTFILES/script/install"
 "$DOTFILES/script/install"
 
 # Update plugin manager
+source "zplug/path.zsh"
 zplug update
 
 echo -e "\n› registering last update"
