@@ -7,10 +7,10 @@
 # Copyright (c) 2023 Chirag Raman
 ###
 
-
-if command -v brew > /dev/null 2>&1; then
-    if brew ls --versions zplug > /dev/null 2>&1; then
+if [[ -z $ZPLUG_HOME ]]; then
+    if [ "$(uname -s)" = "Darwin" ] && brew ls --versions zplug > /dev/null 2>&1; then
         export ZPLUG_HOME="/opt/homebrew/opt/zplug"
-        source "$ZPLUG_HOME/init.zsh"
+    elif [ "$(uname -s)" = "Linux" ]; then
+        export ZPLUG_HOME=$HOME/.zplug
     fi
 fi
