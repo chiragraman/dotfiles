@@ -14,4 +14,6 @@ if [ "$(uname)" = "Linux" ]; then
     tar -xzvf /tmp/chruby-0.3.9.tar.gz
     (cd chruby-0.3.9/ && exec sudo make install)
     rm /tmp/chruby-0.3.9.tar.gz
+elif [ "$(uname)" = "Darwin" ]; then
+    brew install chruby
 fi
