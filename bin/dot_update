@@ -43,7 +43,10 @@ echo -e "\n› $DOTFILES/script/install"
 "$DOTFILES/script/install"
 
 # Update plugin manager
-source "zplug/path.zsh"
+if [[ -z $ZPLUG_HOME ]]; then
+    source "zplug/path.zsh"
+fi
+source $ZPLUG_HOME/init.zsh
 zplug update
 
 echo -e "\n› registering last update"
