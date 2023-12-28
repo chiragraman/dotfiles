@@ -8,7 +8,7 @@ install_fira_code() {
     # Download and install the latest version of Fira Code
     curl -L -s -o /tmp/fira.zip "$zip_url"
 	unzip /tmp/fira.zip -d /tmp/fira-code
-	cp -v /tmp/fira-code/**/*.ttf "$1"
+	cp -v /tmp/fira-code/ttf/*.ttf "$1"
     # Cleanup
     rm -rf /tmp/fira-code
     rm /tmp/fira.zip
